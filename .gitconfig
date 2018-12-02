@@ -1,0 +1,8 @@
+[user]
+	name = claude
+	email = yunleiqi@gmail.com
+	signingkey = 0564DE1F7D4EB7FD
+[core]
+	editor = vim
+[commit]
+	gpgsign = true
