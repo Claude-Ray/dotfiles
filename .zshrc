@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
+# export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -61,6 +61,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
+# plugins=(git z) for MacOS
 plugins=(
   git
 )
@@ -96,45 +97,5 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-##########
-# Common #
-##########
-
-# nvm
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-
-export LC_ALL=en_US.UTF-8
-
 alias vi="nvim"
 # alias vim="nvim"
-
-#########
-# MacOS #
-#########
-
-# autojump
-. /usr/share/autojump/autojump.sh
-# homebrew
-export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles
-export HOMEBREW_NO_AUTO_UPDATE=true
-# MySQL
-export PATH=$PATH:/usr/local/mysql/bin
-# dlv
-export PATH=$PATH:$HOME/go/bin
-# gpg
-export GPG_TTY=$(tty)
-export PATH="/usr/local/opt/openssl/bin:$PATH"
-export PATH="/usr/local/Cellar/openvpn/2.4.6/sbin:$PATH"
-export PATH="/usr/local/sbin:$PATH"
-# llvm
-export PATH="/usr/local/opt/llvm/bin:$PATH"
-#export LDFLAGS="-L/usr/local/opt/llvm/lib"
-#export CPPFLAGS="-I/usr/local/opt/llvm/include"
-#export CPATH=/Library/Developer/CommandLineTools/usr/include/c++/v1
-# cargo
-export PATH="$HOME/.cargo/bin:$PATH"
-# rustup
-export RUSTUP_DIST_SERVER=https://mirrors.ustc.edu.cn/rust-static
-export RUSTUP_UPDATE_ROOT=https://mirrors.ustc.edu.cn/rust-static/rustup
-
