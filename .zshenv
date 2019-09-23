@@ -60,10 +60,3 @@ export PATH="/usr/local/opt/llvm/bin:$PATH"
 # coreutils gnubin
 # PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 
-#########
-# Linux #
-#########
-
-# autojump
-. /usr/share/autojump/autojump.sh
-
