@@ -13,6 +13,9 @@ then
     sudo chsh -s $(which zsh)
     sudo apt install -y autojump
     echo "# autojump\n. /usr/share/autojump/autojump.sh" >> .zshrc
+    echo "installing zsh-autosuggestions"
+    git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+    echo "done"
 else
     echo "zsh is installed"
 fi

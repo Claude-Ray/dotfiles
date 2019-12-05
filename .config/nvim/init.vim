@@ -36,6 +36,9 @@ Plug 'ryanolsonx/vim-lsp-typescript'
 " coc.vim
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
+" Fuzzy
+Plug 'lotabout/skim'
+
 call plug#end()
 
 " Custom Config
