@@ -59,4 +59,9 @@ export PATH="/usr/local/opt/llvm/bin:$PATH"
 #export CPATH=/Library/Developer/CommandLineTools/usr/include/c++/v1
 # coreutils gnubin
 # PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+# Privoxy
+privoxy="http://127.0.0.1:8118"
+export https_proxy=$privoxy
+export http_proxy=$privoxy
+export ftp_proxy=$privoxy
 
