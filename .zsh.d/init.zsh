@@ -104,3 +104,4 @@ alias vi="nvim"
 alias ls="lsd"
 
 [ -f $ZSH_DIR/fuzzy.zsh ] && source $ZSH_DIR/fuzzy.zsh
+[ -f $ZSH_DIR/spaceship.zsh ] && source $ZSH_DIR/spaceship.zsh
