@@ -48,7 +48,7 @@ c.url.searchengines = {
     'duckduckgo': 'https://duckduckgo.com/?q={}',
     'github': 'https://github.com/search?q={}',
     'npm': 'https://npmjs.com/search?q={}',
-    'baidu': 'https://baidu.com/search?q={}',
+    'baidu': 'https://baidu.com/s?wd={}',
     'mijisou': 'https://mijisou.com/search?q={}'
 }
 
