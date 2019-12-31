@@ -52,6 +52,19 @@ c.url.searchengines = {
     'mijisou': 'https://mijisou.com/search?q={}'
 }
 
+# Hide the window decoration.  This setting requires a restart on
+# Wayland.
+# Type: Bool
+# NOTE: How to maximize window after setting hide_decoration to True in OSX?
+# 1. :set window.hide_decoration false
+# 2. :fullscreen
+# 3. :set window.hide_decoration true
+# 4. Enter the system Mission Control (press Ctrl+Up)，then drag the
+#    qutebrowser window back from the "fullscreen" desktop
+# 5. Click or scroll to anywhere with mouse/trackpad to active this window
+# 6. Done
+c.window.hide_decoration = True
+
 # Bindings for normal mode
 config.bind('x', 'tab-close')
 config.bind('X', 'undo')
@@ -65,9 +78,21 @@ config.bind('i', 'enter-mode insert ;; spawn fcitx-remote -t')
 config.bind('gi', 'hint inputs --first ;; spawn fcitx-remote -t')
 config.bind('p', 'open -- {clipboard}')
 config.bind('P', 'open -t -- {clipboard}')
+config.unbind('gl')
+config.unbind('gr')
+config.bind('gj', 'tab-move -')
+config.bind('gk', 'tab-move +')
 config.bind('<Escape>', c.bindings.default['normal']['<Escape>'] + ' ;; fake-key <Escape> ;; clear-messages ;; jseval --quiet document.getSelection().empty()')
+config.bind('<Meta-Ctrl-f>', 'config-cycle window.hide_decoration false true')
 
 # Bindings for insert mode
-config.bind('<ctrl+a>', 'fake-key <Home>', mode='insert')
-config.bind('<ctrl+e>', 'fake-key <End>', mode='insert')
+config.bind('<Ctrl-a>', 'fake-key <Home>', mode='insert')
+config.bind('<Ctrl-e>', 'fake-key <End>', mode='insert')
+config.bind('<Ctrl-d>', 'fake-key <Delete>', mode='insert')
+config.bind('<Ctrl-h>', 'fake-key <Backspace>', mode='insert')
+config.bind('<Ctrl-k>', 'fake-key <Ctrl-Shift-Right> ;; fake-key <Backspace>', mode='insert')
+config.bind('<Ctrl-f>', 'fake-key <Right>', mode='insert')
+config.bind('<Ctrl-b>', 'fake-key <Left>', mode='insert')
+config.bind('<Ctrl-n>', 'fake-key <Down>', mode='insert')
+config.bind('<Ctrl-p>', 'fake-key <Up>', mode='insert')
 config.bind('<Escape>', 'spawn fcitx-remote -t ;; leave-mode ;; fake-key <Escape>', mode='insert')
