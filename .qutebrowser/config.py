@@ -33,6 +33,20 @@ config.set('content.javascript.enabled', True, 'qute://*/*')
 #   - none: Don't use any proxy
 c.content.proxy = 'http://localhost:8118/'
 
+# Format to use for the tab title. The following placeholders are
+# defined:  * `{perc}`: Percentage as a string like `[10%]`. *
+# `{perc_raw}`: Raw percentage, e.g. `10`. * `{current_title}`: Title of
+# the current web page. * `{title_sep}`: The string ` - ` if a title is
+# set, empty otherwise. * `{index}`: Index of this tab. * `{id}`:
+# Internal tab ID of this tab. * `{scroll_pos}`: Page scroll position. *
+# `{host}`: Host of the current web page. * `{backend}`: Either
+# ''webkit'' or ''webengine'' * `{private}`: Indicates when private mode
+# is enabled. * `{current_url}`: URL of the current web page. *
+# `{protocol}`: Protocol (http/https/...) of the current web page. *
+# `{audio}`: Indicator for audio/mute status.
+# Type: FormatString
+c.tabs.title.format = '{audio}{index}: {perc}{current_title}'
+
 # Search engines which can be used via the address bar. Maps a search
 # engine name (such as `DEFAULT`, or `ddg`) to a URL with a `{}`
 # placeholder. The placeholder will be replaced by the search term, use
