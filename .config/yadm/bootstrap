@@ -1,0 +1,97 @@
+#!/bin/bash
+
+install_oh_my_zsh() {
+    if ! [ -d "$HOME/.oh-my-zsh" ]; then
+        echo "Installing oh-my-zsh"
+        sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+        cd "$HOME/.oh-my-zsh"
+        git config --add oh-my-zsh.hide-status 1
+        git config --add oh-my-zsh.hide-dirty 1
+        chsh -s $(which zsh)
+        echo "Installing zsh plugin zsh-autosuggestions"
+        git clone https://github.com/zsh-users/zsh-autosuggestions "$ZSH_CUSTOM/plugins/zsh-autosuggestions"
+        echo "Installing zsh theme spaceship"
+        git clone https://github.com/denysdovhan/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt"
+        ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
+    fi
+}
+
+install_oh_my_tmux() {
+    if ! [ -d "$HOME/.tmux" ]; then
+        echo "Installing oh-my-tmux"
+        git clone --recursive https://github.com/tony/tmux-config.git "$HOME/.tmux"
+        ln -s "$HOME/.tmux/.tmux.conf" "$HOME/.tmux.conf"
+    fi
+    # NOTE clipboard: xclip for Linux, pbcopy for OSX
+    # https://medium.freecodecamp.org/tmux-in-practice-integration-with-system-clipboard-bcd72c62ff7b
+}
+
+install_homebrew() {
+    # install homebrew if it's missing
+    if ! command -v brew >/dev/null 2>&1; then
+        echo "Installing homebrew"
+        /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    fi
+
+    if [ -f "$HOME/.Brewfile" ]; then
+        echo "Updating homebrew bundle"
+        brew bundle --global
+    fi
+}
+
+install_fcitx_remote_osx() {
+    if ! command -v fcitx-remote >/dev/null 2>&1; then
+        mkdir -p "$HOME/soft"
+        cd "$HOME/soft"
+
+        git clone https://github.com/dangxuandev/fcitx-remote-for-osx
+        cd fcitx-remote-for-osx
+
+        ./build.py build squirrel-rime-upstream
+        cp fcitx-remote-squirrel-rime-upstream /usr/local/bin/fcitx-remote-squirrel-rime
+        ln -snf /usr/local/bin/fcitx-remote-squirrel-rime /usr/local/bin/fcitx-remote
+    fi
+}
+
+setup_system_limit_osx() {
+    # https://unix.stackexchange.com/questions/108174/how-to-persistently-control-maximum-system-resource-consumption-on-mac/221988#293062
+
+    if ! [ -f "/Library/LaunchAgents/com.launchd.maxfiles.plist" ]; then
+        sudo /usr/libexec/PlistBuddy /Library/LaunchAgents/com.launchd.maxfiles.plist \
+             -c "add Label string com.launchd.maxfiles" \
+             -c "add ProgramArguments array" \
+             -c "add ProgramArguments: string launchctl" \
+             -c "add ProgramArguments: string limit" \
+             -c "add ProgramArguments: string maxfiles" \
+             -c "add ProgramArguments: string 10240" \
+             -c "add ProgramArguments: string unlimited" \
+             -c "add RunAtLoad bool true"
+    fi
+
+    if ! [ -f "/Library/LaunchAgents/com.launchd.maxproc.plist" ]; then
+        sudo /usr/libexec/PlistBuddy /Library/LaunchAgents/com.launchd.maxproc.plist \
+             -c "add Label string com.launchd.maxproc" \
+             -c "add ProgramArguments array" \
+             -c "add ProgramArguments: string launchctl" \
+             -c "add ProgramArguments: string limit" \
+             -c "add ProgramArguments: string maxproc" \
+             -c "add ProgramArguments: string 2000" \
+             -c "add ProgramArguments: string unlimited" \
+             -c "add RunAtLoad bool true"
+    fi
+
+    sudo launchctl load /Library/LaunchAgents/com.launchd.*
+}
+
+main() {
+    if [[ "$OSTYPE" == "darwin"* ]]; then
+        install_homebrew
+        install_fcitx_remote_osx
+        setup_system_limit_osx
+        echo hello
+    fi
+    install_oh_my_zsh
+    install_oh_my_tmux
+}
+
+main
