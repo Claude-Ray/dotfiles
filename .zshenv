@@ -1,3 +1,6 @@
+# Profiling zsh with zprof
+# zmodload zsh/zprof
+
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -35,6 +38,11 @@ export PATH="$HOME/.cargo/bin:$PATH"
 # rustup
 export RUSTUP_DIST_SERVER=https://mirrors.ustc.edu.cn/rust-static
 export RUSTUP_UPDATE_ROOT=https://mirrors.ustc.edu.cn/rust-static/rustup
+# Privoxy
+privoxy="http://127.0.0.1:8118"
+export https_proxy=$privoxy
+export http_proxy=$privoxy
+export ftp_proxy=$privoxy
 
 #########
 # MacOS #
@@ -59,9 +67,9 @@ export PATH="/usr/local/opt/llvm/bin:$PATH"
 #export CPATH=/Library/Developer/CommandLineTools/usr/include/c++/v1
 # coreutils gnubin
 # PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
-# Privoxy
-privoxy="http://127.0.0.1:8118"
-export https_proxy=$privoxy
-export http_proxy=$privoxy
-export ftp_proxy=$privoxy
 
+##########
+# Custom #
+##########
+
+export PATH=$PATH:$HOME/.nvm/versions/node/v10.15.3/bin

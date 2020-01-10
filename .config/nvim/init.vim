@@ -36,8 +36,11 @@ Plug 'ryanolsonx/vim-lsp-typescript'
 " coc.vim
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-" Fuzzy
+" fuzzy
 Plug 'lotabout/skim'
+
+" Themes
+Plug 'vim-airline/vim-airline'
 
 call plug#end()
 
