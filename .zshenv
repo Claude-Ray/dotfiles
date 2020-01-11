@@ -8,11 +8,6 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 export ZSH="$HOME/.oh-my-zsh"
 
 # User configuration
-
-##########
-# Common #
-##########
-
 export LC_ALL=en_US.UTF-8
 # nvm
 # export NVM_DIR="$HOME/.nvm"
@@ -24,7 +19,7 @@ export LC_ALL=en_US.UTF-8
 if [ -s "$HOME/.nvm/nvm.sh" ] && [ ! "$(whence -w __init_nvm)" = function ]; then
     export NVM_DIR="$HOME/.nvm"
     [ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"
-    declare -a __node_commands=('nvm' 'node' 'npm' 'yarn' 'gulp' 'grunt' 'webpack')
+    declare -a __node_commands=('nvm')
     function __init_nvm() {
         for i in "${__node_commands[@]}"; do unalias $i; done
         . "$NVM_DIR"/nvm.sh
@@ -39,37 +34,33 @@ export PATH="$HOME/.cargo/bin:$PATH"
 export RUSTUP_DIST_SERVER=https://mirrors.ustc.edu.cn/rust-static
 export RUSTUP_UPDATE_ROOT=https://mirrors.ustc.edu.cn/rust-static/rustup
 # Privoxy
-privoxy="http://127.0.0.1:8118"
-export https_proxy=$privoxy
-export http_proxy=$privoxy
-export ftp_proxy=$privoxy
 
-#########
-# MacOS #
-#########
+if [ -x "$(which privoxy)" ]; then
+    privoxy="http://127.0.0.1:8118"
+    export https_proxy=$privoxy
+    export http_proxy=$privoxy
+    export ftp_proxy=$privoxy
+fi
 
-# homebrew
-export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles
-export HOMEBREW_NO_AUTO_UPDATE=true
-# MySQL
-export PATH=$PATH:/usr/local/mysql/bin
-# dlv
-export PATH=$PATH:$HOME/go/bin
-# gpg
-export GPG_TTY=$(tty)
-export PATH="/usr/local/opt/openssl/bin:$PATH"
-export PATH="/usr/local/Cellar/openvpn/2.4.6/sbin:$PATH"
-export PATH="/usr/local/sbin:$PATH"
-# llvm
-export PATH="/usr/local/opt/llvm/bin:$PATH"
-#export LDFLAGS="-L/usr/local/opt/llvm/lib"
-#export CPPFLAGS="-I/usr/local/opt/llvm/include"
-#export CPATH=/Library/Developer/CommandLineTools/usr/include/c++/v1
-# coreutils gnubin
-# PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
-
-##########
-# Custom #
-##########
-
-export PATH=$PATH:$HOME/.nvm/versions/node/v10.15.3/bin
+if [ "$(uname -s)" = "Darwin" ]; then
+    # homebrew
+    export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles
+    export HOMEBREW_NO_AUTO_UPDATE=true
+    # MySQL
+    export PATH=$PATH:/usr/local/mysql/bin
+    # dlv
+    export PATH=$PATH:$HOME/go/bin
+    # gpg
+    export GPG_TTY=$(tty)
+    export PATH="/usr/local/opt/openssl/bin:$PATH"
+    export PATH="/usr/local/Cellar/openvpn/2.4.6/sbin:$PATH"
+    export PATH="/usr/local/sbin:$PATH"
+    # llvm
+    export PATH="/usr/local/opt/llvm/bin:$PATH"
+    #export LDFLAGS="-L/usr/local/opt/llvm/lib"
+    #export CPPFLAGS="-I/usr/local/opt/llvm/include"
+    #export CPATH=/Library/Developer/CommandLineTools/usr/include/c++/v1
+    # coreutils gnubin
+    # PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+    export PATH=$PATH:$HOME/.nvm/versions/node/v10.15.3/bin
+fi
