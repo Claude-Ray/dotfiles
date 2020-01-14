@@ -164,7 +164,7 @@
                 },
                 "rules": [
                     {
-                        "description": "Change left_shift to ctrl+\\ if alone. [toggle-input-method]",
+                        "description": "Change right_shift to ctrl+\\ if alone. [toggle-input-method]",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -176,7 +176,7 @@
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "left_shift",
+                                    "key_code": "right_shift",
                                     "modifiers": {
                                         "optional": [
                                             "any"
@@ -185,7 +185,7 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "left_shift"
+                                        "key_code": "right_shift"
                                     }
                                 ],
                                 "to_if_alone": [
@@ -246,6 +246,31 @@
                                 "to_if_alone": [
                                     {
                                         "key_code": "escape"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Change right_option to left_option + left_control + left_command.",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "right_option",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "left_option",
+                                        "modifiers": [
+                                            "left_control",
+                                            "left_command"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"

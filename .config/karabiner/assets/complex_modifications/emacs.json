@@ -37,6 +37,43 @@
           ]
         }
       ]
+    },
+    {
+      "description": "Change right_shift to ctrl+\\ if alone. [toggle-input-method]",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "right_shift",
+            "modifiers": {
+              "optional": [
+                "any"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "right_shift"
+            }
+          ],
+          "to_if_alone": [
+            {
+              "key_code": "backslash",
+              "modifiers": [
+                "left_control"
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "bundle_identifiers": [
+                "org\\.gnu\\.Emacs"
+              ],
+              "type": "frontmost_application_if"
+            }
+          ]
+        }
+      ]
     }
   ]
 }
