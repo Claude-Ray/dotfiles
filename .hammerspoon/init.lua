@@ -29,7 +29,7 @@ hs.hotkey.bind(hyper, "F", function()
 end)
 
 hs.hotkey.bind(hyper, "V", function()
-    hs.application.launchOrFocus("/Applications/Preview.app")
+    hs.application.launchOrFocus("/System/Applications/Preview.app")
 end)
 
 hs.hotkey.bind(hyper, "W", function()
