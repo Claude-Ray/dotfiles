@@ -117,8 +117,8 @@ config.bind('<Escape>', 'spawn fcitx-remote -t ;; leave-mode ;; fake-key <Escape
 config.bind('<Ctrl-[>', 'spawn fcitx-remote -t ;; leave-mode', mode='insert')
 
 # Bindings for shortcut
-config.bind(',e', 'open https://emacs-china.org')
-config.bind(',g', 'open https://github.com')
-config.bind(',m', 'open https://mail.google.com')
-config.bind(',r', 'open https://reddit.com')
-config.bind(',z', 'open https://zhihu.com')
+config.bind(',e', 'open -t https://emacs-china.org')
+config.bind(',g', 'open -t https://github.com')
+config.bind(',m', 'open -t https://mail.google.com')
+config.bind(',r', 'open -t https://reddit.com')
+config.bind(',z', 'open -t https://zhihu.com')
