@@ -115,3 +115,10 @@ config.bind('<Ctrl-n>', 'fake-key <Down>', mode='insert')
 config.bind('<Ctrl-p>', 'fake-key <Up>', mode='insert')
 config.bind('<Escape>', 'spawn fcitx-remote -t ;; leave-mode ;; fake-key <Escape>', mode='insert')
 config.bind('<Ctrl-[>', 'spawn fcitx-remote -t ;; leave-mode', mode='insert')
+
+# Bindings for shortcut
+config.bind(',e', 'open https://emacs-china.org')
+config.bind(',g', 'open https://github.com')
+config.bind(',m', 'open https://mail.google.com')
+config.bind(',r', 'open https://reddit.com')
+config.bind(',z', 'open https://zhihu.com')
