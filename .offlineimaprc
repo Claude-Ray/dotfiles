@@ -1,0 +1,23 @@
+[general]
+accounts = Work
+pythonfile = ~/.offlineimap.py
+
+[Account Work]
+localrepository = Work-Local
+remoterepository = Work-Remote
+
+[Repository Work-Local]
+type = Maildir
+localfolders = ~/Maildir
+sync_deletes = no
+
+[Repository Work-Remote]
+type = IMAP
+remotehosteval = get_remotehost()
+remoteusereval = get_remoteuser()
+remotepasseval = get_password()
+auth_mechanisms = LOGIN
+createfolders = False
+ssl = false
+sslcacertfile = OS-DEFAULT
+
