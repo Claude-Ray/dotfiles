@@ -64,3 +64,6 @@ if [ "$(uname -s)" = "Darwin" ]; then
     # PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
     export PATH=$PATH:$HOME/.nvm/versions/node/v10.15.3/bin
 fi
+
+# Path to librime project. Added for building liberime.
+export RIME_PATH=$HOME/git/librime
