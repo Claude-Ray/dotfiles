@@ -33,6 +33,29 @@ config.set('content.javascript.enabled', True, 'qute://*/*')
 #   - none: Don't use any proxy
 c.content.proxy = 'http://localhost:8118/'
 
+# Comma-separated list of regular expressions to use for 'next' links.
+# Type: List of Regex
+c.hints.next_regexes = [
+    '\\bnext\\b',
+    '\\bmore\\b',
+    '\\bnewer\\b',
+    '\\b[>→≫]\\b',
+    '\\b(>>|»)\\b',
+    '\\bcontinue\\b',
+    '\\b下一?页\\b'
+]
+
+# Comma-separated list of regular expressions to use for 'prev' links.
+# Type: List of Regex
+c.hints.prev_regexes = [
+    '\\bprev(ious)?\\b',
+    '\\bback\\b',
+    '\\bolder\\b',
+    '\\b[<←≪]\\b',
+    '\\b(<<|«)\\b',
+    '\\b上一?页\\b'
+]
+
 # Format to use for the tab title. The following placeholders are
 # defined:  * `{perc}`: Percentage as a string like `[10%]`. *
 # `{perc_raw}`: Raw percentage, e.g. `10`. * `{current_title}`: Title of
