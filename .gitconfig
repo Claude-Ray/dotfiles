@@ -4,5 +4,8 @@
 	signingkey = 0564DE1F7D4EB7FD
 [core]
 	editor = vim
+	pager = delta --plus-color="#012800" --minus-color="#340001" --theme='Monokai Extended'
 [commit]
 	gpgsign = true
+[interactive]
+	diffFilter = delta --color-only
