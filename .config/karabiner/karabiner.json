@@ -332,9 +332,9 @@
                                 "conditions": [
                                     {
                                         "bundle_identifiers": [
-                                            "com\\.tencent\\.WeWorkMac"
+                                            "org\\.gnu\\.Emacs"
                                         ],
-                                        "type": "frontmost_application_if"
+                                        "type": "frontmost_application_unless"
                                     }
                                 ],
                                 "from": {
