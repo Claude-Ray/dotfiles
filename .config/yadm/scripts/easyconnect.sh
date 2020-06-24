@@ -15,7 +15,6 @@ case $1 in
     sudo launchctl load /Library/LaunchDaemons/com.sangfor.EasyMonitor.plist
     ;;
   ps|ls|list)
-    echo "ps"
     ps aux|grep [E]asyConnect
     ;;
   *)
