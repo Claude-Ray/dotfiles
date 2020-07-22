@@ -8,7 +8,9 @@
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 # https://github.com/denysdovhan/spaceship-prompt
-ZSH_THEME="spaceship"
+# ZSH_THEME="spaceship"
+# https://github.com/romkatv/powerlevel10k
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
@@ -109,4 +111,5 @@ alias b="bat"
 alias rm="echo Use 'trash' please!"
 
 [ -f $ZSH_DIR/fuzzy.zsh ] && source $ZSH_DIR/fuzzy.zsh
-[ -f $ZSH_DIR/spaceship.zsh ] && source $ZSH_DIR/spaceship.zsh
+# [ -f $ZSH_DIR/spaceship.zsh ] && source $ZSH_DIR/spaceship.zsh
+[ -f $ZSH_DIR/p10k.zsh ] && source $ZSH_DIR/p10k.zsh
