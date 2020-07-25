@@ -31,7 +31,7 @@ config.set('content.javascript.enabled', True, 'qute://*/*')
 # Valid values:
 #   - system: Use the system wide proxy.
 #   - none: Don't use any proxy
-c.content.proxy = 'http://localhost:8118/'
+c.content.proxy = 'http://localhost:7890/'
 
 # Comma-separated list of regular expressions to use for 'next' links.
 # Type: List of Regex
@@ -86,7 +86,8 @@ c.url.searchengines = {
     'github': 'https://github.com/search?q={}',
     'npm': 'https://npmjs.com/search?q={}',
     'baidu': 'https://baidu.com/s?wd={}',
-    'mijisou': 'https://mijisou.com/search?q={}'
+    'douban': 'https://douban.com/search?q={}',
+    'zhihu': 'https://zhihu.com/search?q={}'
 }
 
 # Hide the window decoration.  This setting requires a restart on
@@ -112,8 +113,8 @@ config.bind('d', 'scroll-page 0 0.5')
 config.bind('u', 'scroll-page 0 -0.5')
 config.bind('j', 'scroll-page 0 0.1')
 config.bind('k', 'scroll-page 0 -0.1')
-config.bind('i', 'enter-mode insert ;; spawn fcitx-remote -t')
-config.bind('gi', 'hint inputs --first ;; spawn fcitx-remote -t')
+# config.bind('i', 'enter-mode insert ;; spawn fcitx-remote -t')
+# config.bind('gi', 'hint inputs --first ;; spawn fcitx-remote -t')
 config.bind('p', 'open -- {clipboard}')
 config.bind('P', 'open -t -- {clipboard}')
 config.unbind('gl')
@@ -124,6 +125,7 @@ config.bind('<', 'tab-move -')
 config.bind('>', 'tab-move +')
 config.bind('<Escape>', c.bindings.default['normal']['<Escape>'] + ' ;; fake-key <Escape> ;; clear-messages ;; jseval --quiet document.getSelection().empty()')
 config.bind('<Meta-Ctrl-f>', 'config-cycle window.hide_decoration false true')
+config.bind('t,p', 'config-cycle content.proxy system http://localhost:7890/')
 
 # Bindings for insert mode
 config.bind('<Ctrl-a>', 'fake-key <Home>', mode='insert')
@@ -136,8 +138,10 @@ config.bind('<Ctrl-f>', 'fake-key <Right>', mode='insert')
 config.bind('<Ctrl-b>', 'fake-key <Left>', mode='insert')
 config.bind('<Ctrl-n>', 'fake-key <Down>', mode='insert')
 config.bind('<Ctrl-p>', 'fake-key <Up>', mode='insert')
-config.bind('<Escape>', 'spawn fcitx-remote -t ;; leave-mode ;; fake-key <Escape>', mode='insert')
-config.bind('<Ctrl-[>', 'spawn fcitx-remote -t ;; leave-mode', mode='insert')
+# config.bind('<Escape>', 'spawn fcitx-remote -t ;; leave-mode ;; fake-key <Escape>', mode='insert')
+config.bind('<Escape>', 'leave-mode ;; fake-key <Escape>', mode='insert')
+# config.bind('<Ctrl-[>', 'spawn fcitx-remote -t ;; leave-mode', mode='insert')
+config.bind('<Ctrl-[>', 'leave-mode', mode='insert')
 
 # Bindings for shortcut
 config.bind(',e', 'open -t https://emacs-china.org')
