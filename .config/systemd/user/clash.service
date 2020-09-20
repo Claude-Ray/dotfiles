@@ -1,0 +1,13 @@
+# systemctl --user enable clash
+[Unit]
+Description=clash
+
+[Service]
+KillMode=process
+ExecStart=/usr/bin/clash
+Type=simple
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=default.target

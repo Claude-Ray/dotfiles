@@ -1,0 +1,20 @@
+# 1. Copy this to /etc/systemd/system/xkeysnail.service
+# 2. systemctl enable xkeysnail
+# https://qiita.com/samurai20000@github/items/2e1d779e806a7e8543d6
+[Unit]
+Description=xkeysnail
+
+[Service]
+user=root
+KillMode=process
+ExecStartPre=/usr/bin/xhost +SI:localuser:root
+ExecStart=/usr/bin/xkeysnail --watch -q /home/claude/.config/xkeysnail/config.py
+Type=simple
+Restart=always
+RestartSec=10
+
+# Update DISPLAY to be the same as `echo $DISPLAY` on your graphical terminal.
+Environment=DISPLAY=:0
+
+[Install]
+WantedBy=default.target
