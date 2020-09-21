@@ -1,3 +1,3 @@
-export ZSH_DIR=$HOME/.zsh.d
+export ZSH_DIR=$HOME/.config/zsh
 
 source $ZSH_DIR/init.zsh
