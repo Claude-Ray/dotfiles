@@ -100,7 +100,7 @@ private_plugins=(
   p10k
   # spaceship # alternative prompt
   m
-  # proxy # imported by .zshenv already
+  proxy
 )
 
 for plugin ($private_plugins); do
