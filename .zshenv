@@ -61,5 +61,5 @@ if [ "$(uname -s)" = "Darwin" ]; then
 fi
 
 # proxy
-[ -f $ZSH_DIR/proxy.zsh ] && source $ZSH_DIR/proxy.zsh \
-    && [ -x "$(which clash)" ] && proxy_on "http://127.0.0.1:7890"
+[ -x "$(which clash)" ] && export http_proxy="http://127.0.0.1:7890"\
+                                  https_proxy="http://127.0.0.1:7890"
