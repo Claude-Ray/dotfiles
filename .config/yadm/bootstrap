@@ -1,5 +1,54 @@
 #!/bin/bash
 
+pacman_packages=(
+    git
+    clash
+    zsh
+    tmux
+    lsd
+    ripgrep
+    skim
+    bat
+    diskus
+    htop
+    bashtop
+    cmake
+    libvterm
+    qutebrowser
+    nvidia
+    nvidia-utils
+    xorg
+    xorg-server
+    xorg-xinit
+    xclip
+    wqy-microhei
+    ttf-dejavu
+    fcitx-rime
+    fcitx-configtool
+    fcitx-qt5
+    rime-double-pinyin
+    tree
+    zip
+    unzip
+    mu
+    wget
+    rsync
+    dnsutils
+    gnutls
+    inetutils
+    net-tools
+    openssl
+)
+
+install_linux_packages() {
+    if  [[ -f /etc/arch-release ]]; then
+        sudo pacman -Sy
+        for apps in "${pacman_packages[@]}"; do
+            sudo pacman -S --needed "$apps"
+        done
+    fi
+}
+
 install_oh_my_zsh() {
     if ! [ -d "$HOME/.oh-my-zsh" ]; then
         echo "Installing oh-my-zsh"
@@ -11,8 +60,9 @@ install_oh_my_zsh() {
         echo "Installing zsh plugin zsh-autosuggestions"
         git clone https://github.com/zsh-users/zsh-autosuggestions "$ZSH_CUSTOM/plugins/zsh-autosuggestions"
         echo "Installing zsh theme spaceship"
-        git clone https://github.com/denysdovhan/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt"
-        ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
+        git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "$ZSH_CUSTOM/themes/powerlevel10k"
+        # git clone https://github.com/denysdovhan/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt"
+        # ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
     fi
 }
 
@@ -33,7 +83,7 @@ install_homebrew() {
         /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
     fi
 
-    if [ -f "$HOME/.Brewfile" ]; then
+    if [ -f "$HOME/.config/homebrew/Brewfile" ]; then
         echo "Updating homebrew bundle"
         brew bundle --global
     fi
@@ -88,7 +138,8 @@ main() {
         install_homebrew
         install_fcitx_remote_osx
         setup_system_limit_osx
-        echo hello
+    elif [[ "$OSTYPE" == "linux-gnu" ]]; then
+        install_linux_packages
     fi
     install_oh_my_zsh
     install_oh_my_tmux
