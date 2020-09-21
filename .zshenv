@@ -28,19 +28,13 @@ if [ -s "$HOME/.nvm/nvm.sh" ] && [ ! "$(whence -w __init_nvm)" = function ]; the
     }
     for i in "${__node_commands[@]}"; do alias $i='__init_nvm && '$i; done
 fi
+# node
+export PATH="$HOME/.nvm/versions/node/v12.18.4/bin:$PATH"
 # cargo
 export PATH="$HOME/.cargo/bin:$PATH"
 # rustup
 export RUSTUP_DIST_SERVER=https://mirrors.ustc.edu.cn/rust-static
 export RUSTUP_UPDATE_ROOT=https://mirrors.ustc.edu.cn/rust-static/rustup
-# Privoxy
-
-if [ -x "$(which privoxy)" ]; then
-    privoxy="http://127.0.0.1:8118"
-    export https_proxy=$privoxy
-    export http_proxy=$privoxy
-    export ftp_proxy=$privoxy
-fi
 
 if [ "$(uname -s)" = "Darwin" ]; then
     # homebrew
@@ -62,8 +56,10 @@ if [ "$(uname -s)" = "Darwin" ]; then
     #export CPATH=/Library/Developer/CommandLineTools/usr/include/c++/v1
     # coreutils gnubin
     # PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
-    export PATH=$PATH:$HOME/.nvm/versions/node/v10.15.3/bin
+    # Path to librime project. Added for building liberime.
+    export RIME_PATH=$HOME/git/librime
 fi
 
-# Path to librime project. Added for building liberime.
-export RIME_PATH=$HOME/git/librime
+# proxy
+[ -f $ZSH_DIR/proxy.zsh ] && source $ZSH_DIR/proxy.zsh \
+    && [ -x "$(which clash)" ] && proxy_on "http://127.0.0.1:7890"

@@ -65,7 +65,6 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  git
   z
   zsh-autosuggestions
 )
@@ -95,6 +94,19 @@ source $ZSH/oh-my-zsh.sh
 # Number of lines of history you want saved
 export SAVEHIST=100000
 
+# Personal plugins
+private_plugins=(
+  fuzzy
+  p10k
+  # spaceship # alternative prompt
+  m
+  # proxy # imported by .zshenv already
+)
+
+for plugin ($private_plugins); do
+  [ -f $ZSH_DIR/$plugin.zsh ] && source $ZSH_DIR/$plugin.zsh
+done
+
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
@@ -104,12 +116,19 @@ export SAVEHIST=100000
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-alias vi="nvim"
-# alias vim="nvim"
-alias ls="lsd"
-alias b="bat"
-alias rm="echo Use 'trash' please!"
+[ -x "$(which nvim)" ] && alias vi="nvim" || alias vi="vim"
+[ -x "$(which lsd)" ] && alias ls="lsd"
+[ -x "$(which bat)" ] && alias b="bat"
+[ -x "$(which trash)" ] && alias rm="echo Use 'trash' please!"
 
-[ -f $ZSH_DIR/fuzzy.zsh ] && source $ZSH_DIR/fuzzy.zsh
-# [ -f $ZSH_DIR/spaceship.zsh ] && source $ZSH_DIR/spaceship.zsh
-[ -f $ZSH_DIR/p10k.zsh ] && source $ZSH_DIR/p10k.zsh
+alias ni="npm install"
+alias nr="npm run"
+
+alias g="git"
+alias gg="git clone"
+alias gcm="git commit -m"
+alias gcb="git checkout -b"
+alias gco="git checkout"
+alias gd="git diff"
+alias gb="git branch"
+alias gst="git status"
