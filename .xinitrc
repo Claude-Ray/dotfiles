@@ -4,7 +4,7 @@ export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
 export XMODIFIERS=@im=fcitx
 
-(sleep 1 && xset r rate 200 60) &
+(sleep 5 && xset r rate 200 60) &
 
 xhost +SI:localuser:root &
 
