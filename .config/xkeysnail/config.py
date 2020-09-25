@@ -12,6 +12,12 @@ define_conditional_modmap(lambda wm_class, device_name: device_name.startswith("
     Key.LEFT_META: Key.LEFT_ALT
 })
 
+define_conditional_multipurpose_modmap(re.compile(r'Emacs'), {
+    Key.ENTER: [Key.ENTER, Key.RIGHT_CTRL],
+    Key.CAPSLOCK: [Key.ESC, Key.LEFT_CTRL],
+    Key.LEFT_SHIFT: [Key.F13, Key.LEFT_SHIFT]
+})
+
 # [Multipurpose modmap] Give a key two meanings. A normal key when pressed and
 # released, and a modifier key when held down with another key. See Xcape,
 # Carabiner and caps2esc for ideas and concept.
