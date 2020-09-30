@@ -15,4 +15,4 @@ set ai!
 set showmatch
 set ruler
 set incsearch
-
+set bg=dark
