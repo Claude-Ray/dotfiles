@@ -35,6 +35,8 @@ export PATH="$HOME/.cargo/bin:$PATH"
 # rustup
 export RUSTUP_DIST_SERVER=https://mirrors.ustc.edu.cn/rust-static
 export RUSTUP_UPDATE_ROOT=https://mirrors.ustc.edu.cn/rust-static/rustup
+# gpg
+export GPG_TTY=$(tty)
 
 if [ "$(uname -s)" = "Darwin" ]; then
     # homebrew
@@ -44,8 +46,6 @@ if [ "$(uname -s)" = "Darwin" ]; then
     export PATH=$PATH:/usr/local/mysql/bin
     # dlv
     export PATH=$PATH:$HOME/go/bin
-    # gpg
-    export GPG_TTY=$(tty)
     export PATH="/usr/local/opt/openssl/bin:$PATH"
     export PATH="/usr/local/Cellar/openvpn/2.4.6/sbin:$PATH"
     export PATH="/usr/local/sbin:$PATH"

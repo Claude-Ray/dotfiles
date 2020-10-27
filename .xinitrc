@@ -14,6 +14,8 @@ fcitx &
 
 picom -CGb &
 
+redshift &
+
 (sleep 10 && dropbox-cli start) &
 
 while xsetroot -name "`date` `uptime | sed 's/.*,//'`"

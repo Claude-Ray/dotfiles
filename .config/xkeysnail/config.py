@@ -27,8 +27,3 @@ define_conditional_multipurpose_modmap(lambda wm_class, device_name: device_name
     # Capslock is escape when pressed and released. Control when held down.
     Key.CAPSLOCK: [Key.ESC, Key.LEFT_CTRL]
 })
-
-# Keybindings for Emacs
-define_keymap(re.compile("Emacs"), {
-    K("C-space"): K("C-BACKSLASH")
-})
