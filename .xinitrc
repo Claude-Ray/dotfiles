@@ -23,4 +23,4 @@ do
     sleep 1
 done &
 
-exec dwm
+exec dbus-launch dwm
