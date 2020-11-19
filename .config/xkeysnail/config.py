@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import re
+import subprocess
 from xkeysnail.transform import *
 
 # define timeout for multipurpose_modmap
@@ -27,3 +28,12 @@ define_conditional_multipurpose_modmap(lambda wm_class, device_name: device_name
     # Capslock is escape when pressed and released. Control when held down.
     Key.CAPSLOCK: [Key.ESC, Key.LEFT_CTRL]
 })
+
+# Keybindings for wmctrl
+define_keymap(None, {
+    K("RSuper-enter"): K("LSuper-LM-LC-enter"),
+    K("RSuper-e"): K("LSuper-LM-LC-e"),
+    K("RSuper-q"): K("LSuper-LM-LC-q")
+})
+
+subprocess.check_call(['xset', 'r', 'rate', '200', '60'])
