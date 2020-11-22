@@ -33,6 +33,7 @@ define_conditional_multipurpose_modmap(lambda wm_class, device_name: device_name
 define_keymap(None, {
     K("RSuper-enter"): K("LSuper-LM-LC-enter"),
     K("RSuper-e"): K("LSuper-LM-LC-e"),
+    K("RSuper-f"): K("LSuper-LM-LC-f"),
     K("RSuper-q"): K("LSuper-LM-LC-q")
 })
 
