@@ -41,6 +41,14 @@ config.set('content.javascript.enabled', True, 'chrome://*/*')
 # Type: Bool
 config.set('content.javascript.enabled', True, 'qute://*/*')
 
+# Allow websites to show notifications.
+# Type: BoolAsk
+# Valid values:
+#   - true
+#   - false
+#   - ask
+c.content.notifications = True
+
 # Proxy to use. In addition to the listed values, you can use a
 # `socks://...` or `http://...` URL. Note that with QtWebEngine, it will
 # take a couple of seconds until the change is applied, if this value is
@@ -77,14 +85,15 @@ c.hints.prev_regexes = [
 # Format to use for the tab title. The following placeholders are
 # defined:  * `{perc}`: Percentage as a string like `[10%]`. *
 # `{perc_raw}`: Raw percentage, e.g. `10`. * `{current_title}`: Title of
-# the current web page. * `{title_sep}`: The string ` - ` if a title is
-# set, empty otherwise. * `{index}`: Index of this tab. * `{id}`:
-# Internal tab ID of this tab. * `{scroll_pos}`: Page scroll position. *
-# `{host}`: Host of the current web page. * `{backend}`: Either
-# ''webkit'' or ''webengine'' * `{private}`: Indicates when private mode
-# is enabled. * `{current_url}`: URL of the current web page. *
-# `{protocol}`: Protocol (http/https/...) of the current web page. *
-# `{audio}`: Indicator for audio/mute status.
+# the current web page. * `{title_sep}`: The string `" - "` if a title
+# is set, empty otherwise. * `{index}`: Index of this tab. *
+# `{aligned_index}`: Index of this tab padded with spaces to have the
+# same   width. * `{id}`: Internal tab ID of this tab. * `{scroll_pos}`:
+# Page scroll position. * `{host}`: Host of the current web page. *
+# `{backend}`: Either `webkit` or `webengine` * `{private}`: Indicates
+# when private mode is enabled. * `{current_url}`: URL of the current
+# web page. * `{protocol}`: Protocol (http/https/...) of the current web
+# page. * `{audio}`: Indicator for audio/mute status.
 # Type: FormatString
 c.tabs.title.format = '{audio}{index}: {perc}{current_title}'
 
@@ -111,7 +120,7 @@ c.url.searchengines = {
     'google': 'https://google.com/search?q={}',
     'duckduckgo': 'https://duckduckgo.com/?q={}',
     'github': 'https://github.com/search?q={}',
-    'npm': 'https://npmjs.com/search?q={}',
+    'npmjs': 'https://npmjs.com/search?q={}',
     'baidu': 'https://baidu.com/s?wd={}',
     'douban': 'https://douban.com/search?q={}',
     'zhihu': 'https://zhihu.com/search?q={}'
@@ -151,6 +160,8 @@ config.bind('gj', 'tab-move -')
 config.bind('gk', 'tab-move +')
 config.bind('<', 'tab-move -')
 config.bind('>', 'tab-move +')
+config.bind('<Ctrl-i>', 'tab-focus stack-next')
+config.bind('<Ctrl-o>', 'tab-focus stack-prev')
 config.bind('<Escape>', c.bindings.default['normal']['<Escape>'] + ' ;; fake-key <Escape> ;; clear-messages ;; jseval --quiet document.getSelection().empty()')
 config.bind('<Meta-Ctrl-f>', 'config-cycle window.hide_decoration false true')
 config.bind('t,p', 'config-cycle content.proxy system http://localhost:7890/')
@@ -172,8 +183,11 @@ config.bind('<Escape>', 'leave-mode ;; fake-key <Escape>', mode='insert')
 config.bind('<Ctrl-[>', 'leave-mode', mode='insert')
 
 # Bindings for shortcut
+config.bind(',b', 'open -t http://localhost:5000') # Beancount
 config.bind(',e', 'open -t https://emacs-china.org')
+config.bind(',f', 'open -t https://feedly.com')
 config.bind(',g', 'open -t https://github.com')
 config.bind(',m', 'open -t https://mail.google.com')
 config.bind(',r', 'open -t https://reddit.com')
+config.bind(',v', 'open -t https://v2ex.com')
 config.bind(',z', 'open -t https://zhihu.com')
