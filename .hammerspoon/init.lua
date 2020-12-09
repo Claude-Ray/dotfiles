@@ -8,12 +8,8 @@ hs.hotkey.bind(hyper, "Q", function()
     hs.application.launchOrFocus("/Applications/qutebrowser.app")
 end)
 
-hs.hotkey.bind(hyper, "T", function()
-    hs.application.launchOrFocus("/Applications/iTerm.app")
-end)
-
 hs.hotkey.bind(hyper, "Return", function()
-    hs.application.launchOrFocus("/Applications/iTerm.app")
+    hs.application.launchOrFocus("/Applications/Alacritty.app")
 end)
 
 hs.hotkey.bind(hyper, "C", function()
