@@ -16,4 +16,4 @@ set showmatch
 set ruler
 set incsearch
 set bg=dark
-set clipboard=unnamed
+set clipboard^=unnamed,unnamedplus
