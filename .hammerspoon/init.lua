@@ -43,14 +43,13 @@ hs.hotkey.bind(hyper, "X", function()
 end)
 
 --- launchOrFocus a specific window from all windows of one application
--- @param appTitle title in menu bar
--- @param appName full name or path
+-- @param bundleID bundle identifier of the app
 -- @param winTitle partial window title (characters .()[]+- should be escaped with %)
-local function launchOrFocusWindow(appTitle, appName, winTitle)
+local function launchOrFocusWindow(bundleID, winTitle)
   return function()
-    local app = hs.application(appTitle)
+    local app = hs.application(bundleID)
     if app == nil then
-      hs.application.open(appName)
+      hs.application.open(bundleID)
     else
       local windows = app:allWindows()
       for _, win in pairs(windows) do
@@ -66,4 +65,4 @@ local function launchOrFocusWindow(appTitle, appName, winTitle)
 end
 
 -- Example for launchOrFocusWindow
-hs.hotkey.bind(hyper, "1", launchOrFocusWindow("Code", "Visual Studio Code", "bff%-node"))
+hs.hotkey.bind(hyper, "1", launchOrFocusWindow("com.microsoft.VSCode", "bff%-node"))
