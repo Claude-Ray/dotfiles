@@ -1,46 +1,35 @@
 -- luacheck: ignore hs
+
+-- modifiers
 local hyper = {"cmd", "alt", "ctrl"}
 
-hs.hotkey.bind(hyper, "E", function()
-    hs.application.launchOrFocus("/Applications/Emacs.app")
-end)
+-- { hotkey: name }
+local appTable = {
+  Return = "Alacritty",
+  C = "Google Chrome",
+  D = "DingTalk",
+  E = "/Applications/Emacs.app",
+  F = "Firefox",
+  Q = "qutebrowser",
+  M = "NeteaseMusic",
+  V = "Preview",
+  W = "WeChat",
+  X = "企业微信",
+}
 
-hs.hotkey.bind(hyper, "Q", function()
-    hs.application.launchOrFocus("/Applications/qutebrowser.app")
-end)
+-- { hotkey: { bundleID: title } }
+local winTable = {
+  -- Example for launchOrFocusWindow
+  ['1'] = { "com.microsoft.VSCode", "bff%-node" },
+}
 
-hs.hotkey.bind(hyper, "Return", function()
-    hs.application.launchOrFocus("/Applications/Alacritty.app")
-end)
-
-hs.hotkey.bind(hyper, "C", function()
-    hs.application.launchOrFocus("/Applications/Google Chrome.app")
-end)
-
-hs.hotkey.bind(hyper, "D", function()
-    hs.application.launchOrFocus("/Applications/DingTalk.app")
-end)
-
-hs.hotkey.bind(hyper, "F", function()
-    -- FIXME launch without "alt" key to avoid safe-mode
-    hs.application.launchOrFocus("/Applications/Firefox.app")
-end)
-
-hs.hotkey.bind(hyper, "M", function()
-    hs.application.launchOrFocus("/Applications/NeteaseMusic.app")
-end)
-
-hs.hotkey.bind(hyper, "V", function()
-    hs.application.launchOrFocus("/System/Applications/Preview.app")
-end)
-
-hs.hotkey.bind(hyper, "W", function()
-    hs.application.launchOrFocus("/Applications/WeChat.app")
-end)
-
-hs.hotkey.bind(hyper, "X", function()
-    hs.application.launchOrFocus("/Applications/企业微信.app")
-end)
+--- launchOrFocus an application
+-- @param name app
+local function launchOrFocusApp(name)
+  return function()
+    hs.application.launchOrFocus(name)
+  end
+end
 
 --- launchOrFocus a specific window from all windows of one application
 -- @param bundleID bundle identifier of the app
@@ -64,5 +53,18 @@ local function launchOrFocusWindow(bundleID, winTitle)
   end
 end
 
--- Example for launchOrFocusWindow
-hs.hotkey.bind(hyper, "1", launchOrFocusWindow("com.microsoft.VSCode", "bff%-node"))
+local function bindHotkey(t)
+  for k, v in pairs(t) do
+    hs.hotkey.bind(hyper, k, launchOrFocusApp(v))
+  end
+end
+
+local function bindWindowHotkey(t)
+  for k, v in pairs(t) do
+    hs.hotkey.bind(hyper, k, launchOrFocusWindow(v[1], v[2]))
+  end
+end
+
+-- Bind hotkeys
+bindHotkey(appTable)
+bindWindowHotkey(winTable)
