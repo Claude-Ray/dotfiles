@@ -65,6 +65,15 @@ c.content.pdfjs = True
 #   - none: Don't use any proxy
 c.content.proxy = 'http://localhost:7890/'
 
+# Allow websites to register protocol handlers via
+# `navigator.registerProtocolHandler`.
+# Type: BoolAsk
+# Valid values:
+#   - true
+#   - false
+#   - ask
+config.set('content.register_protocol_handler', True, 'https://mail.google.com?extsrc=mailto&url=%25s')
+
 # Comma-separated list of regular expressions to use for 'next' links.
 # Type: List of Regex
 c.hints.next_regexes = [
@@ -176,6 +185,7 @@ config.bind('MM', 'bookmark-add')
 config.bind('MD', 'bookmark-del')
 config.bind('Mb', 'quickmark-save')
 config.bind('<Alt-x>', 'set-cmd-text :')
+config.bind('<Ctrl-h>', 'set-cmd-text :help :')
 config.bind('<Ctrl-i>', 'tab-focus stack-next')
 config.bind('<Ctrl-o>', 'tab-focus stack-prev')
 config.bind('<Escape>', c.bindings.default['normal']['<Escape>'] + ' ;; fake-key <Escape> ;; clear-messages ;; jseval --quiet document.getSelection().empty()')
@@ -217,6 +227,7 @@ config.unbind('sf')
 config.unbind('sk')
 config.unbind('sl')
 config.unbind('ss')
+config.bind('sf', 'set-cmd-text -s :open -t file:// ')
 config.bind('sl', 'set-cmd-text -s :open -t localhost ')
 config.bind('sq', 'set-cmd-text -s :open -t docs.qq.com ')
 config.bind('sy', 'set-cmd-text -s :open -t yuque.com ')
