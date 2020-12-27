@@ -127,9 +127,12 @@ c.url.searchengines = {
     'duckduckgo': 'https://duckduckgo.com/?q={}',
     'github': 'https://github.com/search?q={}',
     'npmjs': 'https://npmjs.com/search?q={}',
+    'reddit': 'https://www.reddit.com/search/?q={}',
     'baidu': 'https://baidu.com/s?wd={}',
     'douban': 'https://douban.com/search?q={}',
-    'zhihu': 'https://zhihu.com/search?q={}'
+    'emacs-china': 'https://emacs-china.org/search?q={}',
+    'zhihu': 'https://zhihu.com/search?q={}',
+    'l': 'http://localhost:{}',
 }
 
 # Hide the window decoration.  This setting requires a restart on
@@ -166,6 +169,13 @@ config.bind('gj', 'tab-move -')
 config.bind('gk', 'tab-move +')
 config.bind('<', 'tab-move -')
 config.bind('>', 'tab-move +')
+config.bind('m', 'enter-mode set_mark')
+config.bind('`', 'enter-mode jump_mark')
+config.unbind('M')
+config.bind('MM', 'bookmark-add')
+config.bind('MD', 'bookmark-del')
+config.bind('Mb', 'quickmark-save')
+config.bind('<Alt-x>', 'set-cmd-text :')
 config.bind('<Ctrl-i>', 'tab-focus stack-next')
 config.bind('<Ctrl-o>', 'tab-focus stack-prev')
 config.bind('<Escape>', c.bindings.default['normal']['<Escape>'] + ' ;; fake-key <Escape> ;; clear-messages ;; jseval --quiet document.getSelection().empty()')
@@ -189,11 +199,33 @@ config.bind('<Escape>', 'leave-mode ;; fake-key <Escape>', mode='insert')
 config.bind('<Ctrl-[>', 'leave-mode', mode='insert')
 
 # Bindings for shortcut
+# Leader key: `,`
 config.bind(',b', 'open -t http://localhost:5000') # Beancount
 config.bind(',e', 'open -t https://emacs-china.org')
 config.bind(',f', 'open -t https://feedly.com')
 config.bind(',g', 'open -t https://github.com')
+config.bind(',h', 'open -t https://news.ycombinator.com')
+config.bind(',l', 'open -t https://leetcode.com/problemset/all')
 config.bind(',m', 'open -t https://mail.google.com')
 config.bind(',r', 'open -t https://reddit.com')
 config.bind(',v', 'open -t https://v2ex.com')
 config.bind(',z', 'open -t https://zhihu.com')
+
+# Bindings for cmd-text
+# Leader key: `s`
+config.unbind('sf')
+config.unbind('sk')
+config.unbind('sl')
+config.unbind('ss')
+config.bind('sl', 'set-cmd-text -s :open -t localhost ')
+config.bind('sq', 'set-cmd-text -s :open -t docs.qq.com ')
+config.bind('sy', 'set-cmd-text -s :open -t yuque.com ')
+
+# Bindings for cmd
+# Leader key: `\`
+config.bind('\\d', 'help')
+config.bind('\\h', 'history')
+config.bind('\\m', 'messages')
+config.bind('\\r', 'config-source')
+config.bind('\\u', 'adblock-update')
+config.bind('\\v', 'version')
