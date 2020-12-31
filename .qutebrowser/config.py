@@ -135,6 +135,7 @@ c.url.searchengines = {
     'google': 'https://google.com/search?q={}',
     'duckduckgo': 'https://duckduckgo.com/?q={}',
     'github': 'https://github.com/search?q={}',
+    '//': 'https://grep.app/search?q={}',
     'npmjs': 'https://npmjs.com/search?q={}',
     'reddit': 'https://www.reddit.com/search/?q={}',
     'baidu': 'https://baidu.com/s?wd={}',

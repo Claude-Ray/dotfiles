@@ -3,6 +3,8 @@
 -- modifiers
 local hyper = {"cmd", "alt", "ctrl"}
 
+---------------------------------------------------------------------------------
+-- Window Manager
 -- { hotkey: name }
 local appTable = {
   Return = "Alacritty",
@@ -68,3 +70,21 @@ end
 -- Bind hotkeys
 bindHotkey(appTable)
 bindWindowHotkey(winTable)
+
+---------------------------------------------------------------------------------
+-- Kechain
+-- luacheck: ignore spoon
+hs.loadSpoon("Keychain")
+
+--- input a preset text (or weak pass) from Keychain
+-- @param account
+local function inputKeychain(account)
+  return function()
+    local item = spoon.Keychain:getItem{service="org.hammerspoon.Hammerspoon", account}
+    if item ~= nil then
+      hs.eventtap.keyStrokes(item.password)
+    end
+  end
+end
+
+hs.hotkey.bind(hyper, "tab", inputKeychain("puppet"))
