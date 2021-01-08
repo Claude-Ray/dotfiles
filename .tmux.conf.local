@@ -64,6 +64,12 @@ tmux_conf_theme_colour_15="#080808"   # dark gray
 tmux_conf_theme_colour_16="#d70000"   # red
 tmux_conf_theme_colour_17="#e4e4e4"   # white
 
+# custom theme
+claude_color_green="#008000"
+claude_color_grey="#98989d"
+claude_color_goldenrod="#daa520"
+claude_color_steelblue="#4682b4"
+
 # default theme (ansi)
 #tmux_conf_theme_colour_1="colour0"
 #tmux_conf_theme_colour_2="colour8"
@@ -168,7 +174,7 @@ tmux_conf_theme_window_status_format="#I #W"
 #     - #{username}
 #     - #{username_ssh}
 tmux_conf_theme_window_status_current_fg="$tmux_conf_theme_colour_1"
-tmux_conf_theme_window_status_current_bg="$tmux_conf_theme_colour_4"
+tmux_conf_theme_window_status_current_bg="$claude_color_steelblue"
 tmux_conf_theme_window_status_current_attr="bold"
 tmux_conf_theme_window_status_current_format="#I #W"
 #tmux_conf_theme_window_status_current_format="#{circled_window_index} #W"
@@ -185,7 +191,7 @@ tmux_conf_theme_window_status_bell_bg="default"
 tmux_conf_theme_window_status_bell_attr="blink,bold"
 
 # window last status style
-tmux_conf_theme_window_status_last_fg="$tmux_conf_theme_colour_4"
+tmux_conf_theme_window_status_last_fg="$claude_color_steelblue"
 tmux_conf_theme_window_status_last_bg="$tmux_conf_theme_colour_2"
 tmux_conf_theme_window_status_last_attr="none"
 
@@ -231,12 +237,12 @@ tmux_conf_theme_status_right=" #{prefix}#{mouse}#{pairing}#{synchronized}#{?batt
 
 # status left style
 tmux_conf_theme_status_left_fg="$tmux_conf_theme_colour_6,$tmux_conf_theme_colour_7,$tmux_conf_theme_colour_8"
-tmux_conf_theme_status_left_bg="$tmux_conf_theme_colour_9,$tmux_conf_theme_colour_10,$tmux_conf_theme_colour_11"
+tmux_conf_theme_status_left_bg="$claude_color_goldenrod,$tmux_conf_theme_colour_10,$tmux_conf_theme_colour_11"
 tmux_conf_theme_status_left_attr="bold,none,none"
 
 # status right style
 tmux_conf_theme_status_right_fg="$tmux_conf_theme_colour_12,$tmux_conf_theme_colour_13,$tmux_conf_theme_colour_14"
-tmux_conf_theme_status_right_bg="$tmux_conf_theme_colour_15,$tmux_conf_theme_colour_16,$tmux_conf_theme_colour_17"
+tmux_conf_theme_status_right_bg="$tmux_conf_theme_colour_15,$claude_color_steelblue,$claude_color_grey"
 tmux_conf_theme_status_right_attr="none,none,bold"
 
 # pairing indicator
@@ -299,7 +305,7 @@ tmux_conf_battery_hbar_palette="gradient"
 #   - heat
 #   - "colour_low,colour_half,colour_full"
 tmux_conf_battery_vbar_palette="gradient"
-#tmux_conf_battery_vbar_palette="#d70000,#ff5f00,#5fff00"  # red, orange, green
+tmux_conf_battery_vbar_palette="#d70000,#ff5f00,$claude_color_green"  # red, orange, green
 
 # symbols used to indicate whether battery is charging or discharging
 tmux_conf_battery_status_charging="↑"       # U+2191
@@ -327,7 +333,7 @@ tmux_conf_copy_to_os_clipboard=true
 # this is the place to override or undo settings
 
 # increase history size
-#set -g history-limit 10000
+set -g history-limit 10000
 
 # start with mouse mode enabled
 #set -g mouse on
