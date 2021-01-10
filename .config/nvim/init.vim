@@ -2,6 +2,8 @@ set runtimepath^=~/.vim runtimepath+=~/.vim/after
 let &packpath = &runtimepath
 source ~/.vimrc
 
+autocmd VimEnter,VimLeave * silent !tmux set status
+
 call plug#begin('~/.local/share/nvim/plugged')
 
 " Make sure you use single quotes
