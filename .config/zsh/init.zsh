@@ -69,9 +69,18 @@ plugins=(
   zsh-autosuggestions
 )
 
+#-------------------------------------#
+# User configuration before oh-my-zsh #
+#-------------------------------------#
+
+# Replace p10k with theme which is compatible with vterm
+[ "$INSIDE_EMACS" = "vterm" ] && ZSH_THEME="robbyrussell"
+
 source $ZSH/oh-my-zsh.sh
 
-# User configuration
+#-------------------------------------#
+# User configuration after oh-my-zsh  #
+#-------------------------------------#
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -101,6 +110,7 @@ private_plugins=(
   # spaceship # alternative prompt
   m
   proxy
+  vterm
 )
 
 for plugin ($private_plugins); do
