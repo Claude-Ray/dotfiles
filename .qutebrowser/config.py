@@ -17,8 +17,8 @@ config = config  # noqa: F821 pylint: disable=E0602,C0103
 #   qute://help/configuring.html
 #   qute://help/settings.html
 
-# Uncomment this to still load settings configured via autoconfig.yml
-# config.load_autoconfig()
+# Change the argument to True to still load settings configured via autoconfig.yml
+config.load_autoconfig(False)
 
 # Require a confirmation before quitting the application.
 # Type: ConfirmQuit
@@ -124,7 +124,8 @@ c.tabs.title.format = '{audio}{index}: {perc}{current_title}'
 # * `{quoted}` quotes all characters (for `slash/and&amp` this
 # placeholder   expands to `slash%2Fand%26amp`). * `{unquoted}` quotes
 # nothing (for `slash/and&amp` this placeholder   expands to
-# `slash/and&amp`).  The search engine named `DEFAULT` is used when
+# `slash/and&amp`). * `{0}` means the same as `{}`, but can be used
+# multiple times.  The search engine named `DEFAULT` is used when
 # `url.auto_search` is turned on and something else than a URL was
 # entered to be opened. Other search engines can be used by prepending
 # the search engine name to the search term, e.g. `:open google
@@ -136,6 +137,7 @@ c.url.searchengines = {
     'duckduckgo': 'https://duckduckgo.com/?q={}',
     'github': 'https://github.com/search?q={}',
     '//': 'https://grep.app/search?q={}',
+    'codelf': 'https://unbug.github.io/codelf/#{}',
     'npmjs': 'https://npmjs.com/search?q={}',
     'reddit': 'https://www.reddit.com/search/?q={}',
     'baidu': 'https://baidu.com/s?wd={}',
@@ -170,18 +172,18 @@ config.bind('d', 'scroll-page 0 0.5')
 config.bind('u', 'scroll-page 0 -0.5')
 config.bind('j', 'scroll-page 0 0.1')
 config.bind('k', 'scroll-page 0 -0.1')
-# config.bind('i', 'enter-mode insert ;; spawn fcitx-remote -t')
+# config.bind('i', 'mode-enter insert ;; spawn fcitx-remote -t')
 # config.bind('gi', 'hint inputs --first ;; spawn fcitx-remote -t')
 config.bind('p', 'open -- {clipboard}')
 config.bind('P', 'open -t -- {clipboard}')
-config.unbind('gl')
-config.unbind('gr')
+config.unbind('gJ')
+config.unbind('gK')
 config.bind('gj', 'tab-move -')
 config.bind('gk', 'tab-move +')
 config.bind('<', 'tab-move -')
 config.bind('>', 'tab-move +')
-config.bind('m', 'enter-mode set_mark')
-config.bind('`', 'enter-mode jump_mark')
+config.bind('m', 'mode-enter set_mark')
+config.bind('`', 'mode-enter jump_mark')
 config.unbind('+')
 config.unbind('-')
 config.unbind('=')
@@ -192,6 +194,7 @@ config.unbind('M')
 config.bind('MM', 'bookmark-add')
 config.bind('MD', 'bookmark-del')
 config.bind('Mb', 'quickmark-save')
+config.bind('ML', 'bookmark-list -t --jump')
 config.bind('<Alt-x>', 'set-cmd-text :')
 config.bind('<Ctrl-h>', 'set-cmd-text :help :')
 config.bind('<Ctrl-i>', 'tab-focus stack-next')
@@ -211,10 +214,10 @@ config.bind('<Ctrl-f>', 'fake-key <Right>', mode='insert')
 config.bind('<Ctrl-b>', 'fake-key <Left>', mode='insert')
 config.bind('<Ctrl-n>', 'fake-key <Down>', mode='insert')
 config.bind('<Ctrl-p>', 'fake-key <Up>', mode='insert')
-# config.bind('<Escape>', 'spawn fcitx-remote -t ;; leave-mode ;; fake-key <Escape>', mode='insert')
-config.bind('<Escape>', 'leave-mode ;; fake-key <Escape>', mode='insert')
-# config.bind('<Ctrl-[>', 'spawn fcitx-remote -t ;; leave-mode', mode='insert')
-config.bind('<Ctrl-[>', 'leave-mode', mode='insert')
+# config.bind('<Escape>', 'spawn fcitx-remote -t ;; mode-leave ;; fake-key <Escape>', mode='insert')
+config.bind('<Escape>', 'mode-leave ;; fake-key <Escape>', mode='insert')
+# config.bind('<Ctrl-[>', 'spawn fcitx-remote -t ;; mode-leave', mode='insert')
+config.bind('<Ctrl-[>', 'mode-leave', mode='insert')
 
 # Bindings for shortcut
 # Leader key: `,`
