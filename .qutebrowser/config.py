@@ -219,14 +219,15 @@ config.bind('<Ctrl-p>', 'fake-key <Up>', mode='insert')
 config.bind('<Escape>', 'mode-leave ;; fake-key <Escape>', mode='insert')
 # config.bind('<Ctrl-[>', 'spawn fcitx-remote -t ;; mode-leave', mode='insert')
 config.bind('<Ctrl-[>', 'mode-leave', mode='insert')
-# bindings inspired by Darwin:
+
+# Bindings inspired by Darwin:
 if platform.system() != "Darwin":
-  config.bind('<Meta-a>', 'fake-key <Ctrl-a>', mode='insert')
-  config.bind('<Meta-c>', 'fake-key <Ctrl-c>', mode='insert')
-  config.bind('<Meta-v>', 'fake-key <Ctrl-v>', mode='insert')
-  config.bind('<Meta-x>', 'fake-key <Ctrl-x>', mode='insert')
-  config.bind('<Meta-z>', 'fake-key <Ctrl-z>', mode='insert')
-  config.bind('<Meta-Shift-z>', 'fake-key <Ctrl-Shift-z>', mode='insert')
+  config.bind('<Meta-a>', 'fake-key <Ctrl-a>')
+  config.bind('<Meta-c>', 'fake-key <Ctrl-c>')
+  config.bind('<Meta-v>', 'fake-key <Ctrl-v>')
+  config.bind('<Meta-x>', 'fake-key <Ctrl-x>')
+  config.bind('<Meta-z>', 'fake-key <Ctrl-z>')
+  config.bind('<Meta-Shift-z>', 'fake-key <Ctrl-Shift-z>')
 
 # Bindings for shortcut
 # Leader key: `,`
