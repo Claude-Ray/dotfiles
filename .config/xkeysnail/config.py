@@ -37,4 +37,9 @@ define_keymap(None, {
     K("RSuper-q"): K("LSuper-LM-LC-q")
 })
 
+define_keymap(re.compile("st|Alacritty"), {
+    K("LSuper-c"): K("LShift-LC-c"),
+    K("LSuper-v"): K("LShift-LC-v")
+})
+
 subprocess.check_call(['xset', 'r', 'rate', '200', '60'])
