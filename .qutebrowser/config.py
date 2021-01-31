@@ -222,12 +222,13 @@ config.bind('<Ctrl-[>', 'mode-leave', mode='insert')
 
 # Bindings inspired by Darwin:
 if platform.system() != "Darwin":
-  config.bind('<Meta-a>', 'fake-key <Ctrl-a>')
-  config.bind('<Meta-c>', 'fake-key <Ctrl-c>')
-  config.bind('<Meta-v>', 'fake-key <Ctrl-v>')
-  config.bind('<Meta-x>', 'fake-key <Ctrl-x>')
-  config.bind('<Meta-z>', 'fake-key <Ctrl-z>')
-  config.bind('<Meta-Shift-z>', 'fake-key <Ctrl-Shift-z>')
+  for m in ['normal', 'insert']:
+    config.bind('<Meta-a>', 'fake-key <Ctrl-a>', mode=m)
+    config.bind('<Meta-c>', 'fake-key <Ctrl-c>', mode=m)
+    config.bind('<Meta-v>', 'fake-key <Ctrl-v>', mode=m)
+    config.bind('<Meta-x>', 'fake-key <Ctrl-x>', mode=m)
+    config.bind('<Meta-z>', 'fake-key <Ctrl-z>', mode=m)
+    config.bind('<Meta-Shift-z>', 'fake-key <Ctrl-Shift-z>', mode=m)
 
 # Bindings for shortcut
 # Leader key: `,`
