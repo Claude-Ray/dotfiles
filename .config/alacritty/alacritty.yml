@@ -10,6 +10,7 @@
 # to the user's home directory starting with `~/`.
 import:
   - ~/.config/alacritty/local.yml
+  - ~/.config/alacritty/theme.yml
 
 # Any items in the `env` entry below will be added as
 # environment variables. Some entries may override variables
