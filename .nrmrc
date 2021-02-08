@@ -1,2 +1,5 @@
 [wynpm]
 registry=http://npm.guahao-inc.com/
+
+[tencent]
+registry=http://mirrors.cloud.tencent.com/npm/
