@@ -5,6 +5,7 @@
 [core]
 	editor = vim
 	pager = delta --plus-color="#012800" --minus-color="#340001" --theme='Monokai Extended'
+	excludesFile = ~/.config/git/.gitignore
 [commit]
 	gpgsign = true
 [interactive]
