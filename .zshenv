@@ -40,7 +40,9 @@ export GPG_TTY=$(tty)
 
 if [ "$(uname -s)" = "Darwin" ]; then
     # homebrew
-    export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles
+    # https://jfrog.com/blog/into-the-sunset-bintray-jcenter-gocenter-and-chartcenter/
+    # Waiting for https://github.com/tuna/issues/issues/1224
+    # export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles
     export HOMEBREW_NO_AUTO_UPDATE=true
     # MySQL
     export PATH=$PATH:/usr/local/mysql/bin
@@ -58,6 +60,8 @@ if [ "$(uname -s)" = "Darwin" ]; then
     # PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
     # Path to librime project. Added for building liberime.
     export RIME_PATH=$HOME/git/librime
+    # pkg-config
+    export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:/opt/X11/lib/pkgconfig
 fi
 
 # proxy
