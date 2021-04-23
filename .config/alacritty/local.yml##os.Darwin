@@ -1,5 +1,7 @@
 window:
-  startup_mode: SimpleFullscreen
+  # `SimpleFullscreen` won't move alacritty back to the main desktop after
+  # switching from multi-display to single-display.
+  startup_mode: Maximized
 
 key_bindings:
   - { key: Return,      mods: Command,         action: ToggleSimpleFullscreen }
