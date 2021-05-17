@@ -69,7 +69,7 @@ install_oh_my_zsh() {
 install_oh_my_tmux() {
     if ! [ -d "$HOME/.tmux" ]; then
         echo "Installing oh-my-tmux"
-        git clone --recursive https://github.com/tony/tmux-config.git "$HOME/.tmux"
+        git clone https://github.com/gpakosz/.tmux.git "$HOME/.tmux"
         ln -s "$HOME/.tmux/.tmux.conf" "$HOME/.tmux.conf"
     fi
     # NOTE clipboard: xclip for Linux, pbcopy for OSX

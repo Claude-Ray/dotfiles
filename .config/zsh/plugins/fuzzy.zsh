@@ -10,7 +10,8 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   # Key bindings
   source "/usr/local/share/zsh/site-functions/key-bindings.zsh"
 elif [[ "$OSTYPE" == "linux-gnu" ]]; then
-  source "/usr/share/zsh/site-functions/_sk"
+  source "/usr/share/skim/completion.zsh"
+  source "/usr/share/skim/key-bindings.zsh"
 fi
 
 # Custom
