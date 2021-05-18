@@ -3,6 +3,11 @@ window:
   # switching from multi-display to single-display.
   startup_mode: Maximized
 
+font:
+  normal:
+    family: PragmataPro
+  size: 16.0
+
 key_bindings:
   - { key: Return,      mods: Command,         action: ToggleSimpleFullscreen }
   - { key: PageUp,                             action: ScrollPageUp     }
