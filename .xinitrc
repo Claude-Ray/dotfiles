@@ -34,6 +34,9 @@ redshift &
 
 (sleep 10 && dropbox-cli start) &
 
+# %wheel ALL=(ALL) NOPASSWD: /usr/bin/systemctl restart xkeysnails
+(sleep 5 && sudo systemctl restart xkeysnails) &
+
 while xsetroot -name "`date` `uptime | sed 's/.*,//'`"
 do
   sleep 1
