@@ -34,7 +34,8 @@ define_keymap(None, {
     K("RSuper-enter"): K("LSuper-LM-LC-enter"),
     K("RSuper-e"): K("LSuper-LM-LC-e"),
     K("RSuper-f"): K("LSuper-LM-LC-f"),
-    K("RSuper-q"): K("LSuper-LM-LC-q")
+    K("RSuper-q"): K("LSuper-LM-LC-q"),
+    K("RSuper-w"): K("LSuper-LM-LC-w")
 })
 
 define_keymap(re.compile("st|Alacritty"), {
