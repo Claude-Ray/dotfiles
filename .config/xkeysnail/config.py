@@ -35,12 +35,20 @@ define_keymap(None, {
     K("RSuper-e"): K("LSuper-LM-LC-e"),
     K("RSuper-f"): K("LSuper-LM-LC-f"),
     K("RSuper-q"): K("LSuper-LM-LC-q"),
-    K("RSuper-w"): K("LSuper-LM-LC-w")
-})
+    K("RSuper-v"): K("LSuper-LM-LC-v")
+}, "wmctrl")
+
+# Keybindings for virtual machine
+define_keymap(lambda wm_class: wm_class not in ("VirtualBox Machine"), {
+    K("RSuper-w"): K("LSuper-LM-LC-v"),
+    K("RSuper-x"): K("LSuper-LM-LC-v"),
+    K("LSuper-LM-LC-w"): K("LSuper-LM-LC-v"),
+    K("LSuper-LM-LC-x"): K("LSuper-LM-LC-v")
+}, "VM keys")
 
 define_keymap(re.compile("st|Alacritty"), {
     K("LSuper-c"): K("LShift-LC-c"),
     K("LSuper-v"): K("LShift-LC-v")
-})
+}, "Terminal")
 
 subprocess.check_call(['xset', 'r', 'rate', '200', '60'])
