@@ -15,17 +15,17 @@ pacman_packages=(
     cmake
     libvterm
     qutebrowser
-    nvidia
-    nvidia-utils
+    # nvidia
+    # nvidia-utils
     xorg
     xorg-server
     xorg-xinit
     xclip
     wqy-microhei
     ttf-dejavu
-    fcitx-rime
-    fcitx-configtool
-    fcitx-qt5
+    fcitx5-rime
+    fcitx5-configtool
+    fcitx5-qt
     rime-double-pinyin
     tree
     zip
@@ -43,8 +43,9 @@ pacman_packages=(
 install_linux_packages() {
     if  [[ -f /etc/arch-release ]]; then
         sudo pacman -Sy
+        sudo pacman-key --populate
         for apps in "${pacman_packages[@]}"; do
-            sudo pacman -S --needed "$apps"
+            sudo pacman -S --noconfirm --needed "$apps"
         done
     fi
 }
