@@ -4,9 +4,10 @@ export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
 export XMODIFIERS=@im=fcitx
 
-RESOLUTION=$(xrandr -q | grep ' connected' | cut -d ' ' -f3 | cut -d 'x' -f1)
+RESOLUTION=$(xdpyinfo | awk '/dimensions/{print $2}' | cut -d 'x' -f1)
 [ -z $RESOLUTION ] && RESOLUTION=1920
 SCREEN_SCALE=$(($RESOLUTION / 1920))
+((RESOLUTION == 3000)) && SCREEN_SCALE=2
 
 export QT_AUTO_SCREEN_SCALE_FACTOR=1
 export GDK_SCALE=${SCREEN_SCALE}
