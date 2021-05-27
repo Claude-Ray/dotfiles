@@ -39,6 +39,8 @@ redshift &
 # %wheel ALL=(ALL) NOPASSWD: /usr/bin/systemctl restart xkeysnail
 (sleep 5 && sudo systemctl restart xkeysnail) &
 
+xautolock -time 10 -locker slock &
+
 while xsetroot -name "`date` `uptime | sed 's/.*,//'`"
 do
   sleep 1
