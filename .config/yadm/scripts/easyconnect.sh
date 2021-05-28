@@ -23,7 +23,7 @@ case $1 in
       open -a Authy\ Desktop
     elif [[ "$OSTYPE" == "linux-gnu" ]]; then
       systemctl start EasyMonitor
-      wmctrl -xa EasyConnect
+      # wmctrl -xa EasyConnect
     fi
     ;;
   ps|ls|list)
