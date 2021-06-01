@@ -11,7 +11,12 @@ SCREEN_SCALE=$(($RESOLUTION / 1920))
 
 export QT_AUTO_SCREEN_SCALE_FACTOR=1
 export GDK_SCALE=${SCREEN_SCALE}
-((SCREEN_SCALE >= 2)) && export GDK_DPI_SCALE=0.5
+if ((SCREEN_SCALE >= 2)); then
+  export GDK_DPI_SCALE=0.5
+  # Would be overwritten by ~/.config/chrome-flags.conf
+  export CHROME_USER_FLAGS="--force-device-scale-factor=2.0"
+  export CHROMIUM_USER_FLAGS="--force-device-scale-factor=2.0"
+fi
 
 (sleep 5 && xset r rate 200 60) &
 
