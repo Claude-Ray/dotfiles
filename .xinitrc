@@ -27,12 +27,6 @@ xhost +SI:localuser:root &
 [[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources
 ((SCREEN_SCALE >= 2)) && [[ -f ~/.Xresources-4K ]] && xrdb -merge -I$HOME ~/.Xresources-4K
 
-if command -v fcitx &> /dev/null; then
-  fcitx &
-elif command -v fcitx5 &> /dev/null; then
-  fcitx5 &
-fi
-
 ~/.fehbg &
 
 picom -CGb &
