@@ -1,11 +1,11 @@
 {
     "type": "script",
-    "description": "select",
+    "description": "copy",
     "store": {},
     "modes": [
         3
     ],
-    "usageCount": 19,
+    "usageCount": 0,
     "prompt": false,
     "omitTrigger": false,
     "showInTrayMenu": false,
@@ -21,10 +21,10 @@
         "modifiers": [
             "<super>"
         ],
-        "hotKey": "a"
+        "hotKey": "c"
     },
     "filter": {
-        "regex": null,
+        "regex": "Navigator.firefox|google-chrome.Google-chrome",
         "isRecursive": false
     }
 }

@@ -1,11 +1,11 @@
 {
     "type": "script",
-    "description": "kill-line",
+    "description": "home",
     "store": {},
     "modes": [
         3
     ],
-    "usageCount": 2,
+    "usageCount": 0,
     "prompt": false,
     "omitTrigger": false,
     "showInTrayMenu": false,
@@ -21,10 +21,10 @@
         "modifiers": [
             "<ctrl>"
         ],
-        "hotKey": "u"
+        "hotKey": "a"
     },
     "filter": {
-        "regex": null,
+        "regex": "Navigator.firefox|google-chrome.Google-chrome",
         "isRecursive": false
     }
 }

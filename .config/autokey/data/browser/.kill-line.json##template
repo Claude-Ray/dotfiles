@@ -1,6 +1,6 @@
 {
     "type": "script",
-    "description": "copy",
+    "description": "kill-line",
     "store": {},
     "modes": [
         3
@@ -19,12 +19,12 @@
     },
     "hotkey": {
         "modifiers": [
-            "<super>"
+            "<ctrl>"
         ],
-        "hotKey": "c"
+        "hotKey": "u"
     },
     "filter": {
-        "regex": null,
+        "regex": "Navigator.firefox|google-chrome.Google-chrome",
         "isRecursive": false
     }
 }

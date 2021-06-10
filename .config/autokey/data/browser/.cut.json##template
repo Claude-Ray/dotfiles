@@ -1,8 +1,13 @@
 {
-    "type": "folder",
-    "title": "browser",
-    "modes": [],
-    "usageCount": 66,
+    "type": "script",
+    "description": "cut",
+    "store": {},
+    "modes": [
+        3
+    ],
+    "usageCount": 0,
+    "prompt": false,
+    "omitTrigger": false,
     "showInTrayMenu": false,
     "abbreviation": {
         "abbreviations": [],
@@ -13,8 +18,10 @@
         "wordChars": "[\\w]"
     },
     "hotkey": {
-        "modifiers": [],
-        "hotKey": null
+        "modifiers": [
+            "<super>"
+        ],
+        "hotKey": "x"
     },
     "filter": {
         "regex": "Navigator.firefox|google-chrome.Google-chrome",

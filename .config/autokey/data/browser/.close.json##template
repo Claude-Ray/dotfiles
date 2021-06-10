@@ -1,6 +1,6 @@
 {
     "type": "script",
-    "description": "new",
+    "description": "close",
     "store": {},
     "modes": [
         3
@@ -21,10 +21,10 @@
         "modifiers": [
             "<super>"
         ],
-        "hotKey": "n"
+        "hotKey": "w"
     },
     "filter": {
-        "regex": null,
+        "regex": "autokey-qt.autokey-qt|Navigator.firefox|google-chrome.Google-chrome",
         "isRecursive": false
     }
 }

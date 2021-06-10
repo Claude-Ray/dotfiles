@@ -1,6 +1,6 @@
 {
     "type": "script",
-    "description": "redo",
+    "description": "end",
     "store": {},
     "modes": [
         3
@@ -19,13 +19,12 @@
     },
     "hotkey": {
         "modifiers": [
-            "<shift>",
-            "<super>"
+            "<ctrl>"
         ],
-        "hotKey": "z"
+        "hotKey": "e"
     },
     "filter": {
-        "regex": null,
+        "regex": "Navigator.firefox|google-chrome.Google-chrome",
         "isRecursive": false
     }
 }

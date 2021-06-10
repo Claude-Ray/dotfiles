@@ -1,6 +1,6 @@
 {
     "type": "script",
-    "description": "home",
+    "description": "delete",
     "store": {},
     "modes": [
         3
@@ -21,10 +21,10 @@
         "modifiers": [
             "<ctrl>"
         ],
-        "hotKey": "a"
+        "hotKey": "d"
     },
     "filter": {
-        "regex": null,
+        "regex": "Navigator.firefox|google-chrome.Google-chrome",
         "isRecursive": false
     }
 }

@@ -1,11 +1,11 @@
 {
     "type": "script",
-    "description": "quicktype",
+    "description": "undo",
     "store": {},
     "modes": [
         3
     ],
-    "usageCount": 57,
+    "usageCount": 0,
     "prompt": false,
     "omitTrigger": false,
     "showInTrayMenu": false,
@@ -19,14 +19,12 @@
     },
     "hotkey": {
         "modifiers": [
-            "<alt>",
-            "<ctrl>",
             "<super>"
         ],
-        "hotKey": "<tab>"
+        "hotKey": "z"
     },
     "filter": {
-        "regex": null,
+        "regex": "Navigator.firefox|google-chrome.Google-chrome",
         "isRecursive": false
     }
 }

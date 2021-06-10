@@ -1,6 +1,6 @@
 {
     "type": "script",
-    "description": "down",
+    "description": "backward-word",
     "store": {},
     "modes": [
         3
@@ -19,12 +19,12 @@
     },
     "hotkey": {
         "modifiers": [
-            "<ctrl>"
+            "<alt>"
         ],
-        "hotKey": "n"
+        "hotKey": "b"
     },
     "filter": {
-        "regex": null,
+        "regex": "Navigator.firefox|google-chrome.Google-chrome",
         "isRecursive": false
     }
 }

@@ -1,6 +1,6 @@
 {
     "type": "script",
-    "description": "cut",
+    "description": "quicktype",
     "store": {},
     "modes": [
         3
@@ -19,12 +19,14 @@
     },
     "hotkey": {
         "modifiers": [
+            "<alt>",
+            "<ctrl>",
             "<super>"
         ],
-        "hotKey": "x"
+        "hotKey": "<tab>"
     },
     "filter": {
-        "regex": null,
+        "regex": "^((?!VirtualBox Machine).)*$",
         "isRecursive": false
     }
 }

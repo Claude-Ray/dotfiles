@@ -1,6 +1,6 @@
 {
     "type": "script",
-    "description": "forward-word",
+    "description": "forward-kill-line",
     "store": {},
     "modes": [
         3
@@ -19,12 +19,12 @@
     },
     "hotkey": {
         "modifiers": [
-            "<alt>"
+            "<ctrl>"
         ],
-        "hotKey": "f"
+        "hotKey": "k"
     },
     "filter": {
-        "regex": null,
+        "regex": "Navigator.firefox|google-chrome.Google-chrome",
         "isRecursive": false
     }
 }

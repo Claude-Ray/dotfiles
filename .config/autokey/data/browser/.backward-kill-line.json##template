@@ -1,6 +1,6 @@
 {
     "type": "script",
-    "description": "backward",
+    "description": "backward-kill-line",
     "store": {},
     "modes": [
         3
@@ -19,12 +19,12 @@
     },
     "hotkey": {
         "modifiers": [
-            "<ctrl>"
+            "<alt>"
         ],
-        "hotKey": "b"
+        "hotKey": "w"
     },
     "filter": {
-        "regex": null,
+        "regex": "Navigator.firefox|google-chrome.Google-chrome",
         "isRecursive": false
     }
 }

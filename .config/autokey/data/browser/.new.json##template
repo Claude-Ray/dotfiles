@@ -1,6 +1,6 @@
 {
     "type": "script",
-    "description": "up",
+    "description": "new",
     "store": {},
     "modes": [
         3
@@ -19,12 +19,12 @@
     },
     "hotkey": {
         "modifiers": [
-            "<ctrl>"
+            "<super>"
         ],
-        "hotKey": "p"
+        "hotKey": "n"
     },
     "filter": {
-        "regex": null,
+        "regex": "Navigator.firefox|google-chrome.Google-chrome",
         "isRecursive": false
     }
 }
