@@ -1,0 +1,23 @@
+{
+    "type": "folder",
+    "title": "qutebrowser",
+    "modes": [],
+    "usageCount": 25,
+    "showInTrayMenu": false,
+    "abbreviation": {
+        "abbreviations": [],
+        "backspace": true,
+        "ignoreCase": false,
+        "immediate": false,
+        "triggerInside": false,
+        "wordChars": "[\\w]"
+    },
+    "hotkey": {
+        "modifiers": [],
+        "hotKey": null
+    },
+    "filter": {
+        "regex": "qutebrowser.qutebrowser",
+        "isRecursive": false
+    }
+}
