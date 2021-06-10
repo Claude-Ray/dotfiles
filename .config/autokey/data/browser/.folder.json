@@ -1,0 +1,23 @@
+{
+    "type": "folder",
+    "title": "browser",
+    "modes": [],
+    "usageCount": 66,
+    "showInTrayMenu": false,
+    "abbreviation": {
+        "abbreviations": [],
+        "backspace": true,
+        "ignoreCase": false,
+        "immediate": false,
+        "triggerInside": false,
+        "wordChars": "[\\w]"
+    },
+    "hotkey": {
+        "modifiers": [],
+        "hotKey": null
+    },
+    "filter": {
+        "regex": "Navigator.firefox|google-chrome.Google-chrome",
+        "isRecursive": false
+    }
+}

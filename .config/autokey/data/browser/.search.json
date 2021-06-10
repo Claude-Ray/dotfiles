@@ -1,8 +1,13 @@
 {
-    "type": "folder",
-    "title": "qutebrowser",
-    "modes": [],
-    "usageCount": 25,
+    "type": "script",
+    "description": "search",
+    "store": {},
+    "modes": [
+        3
+    ],
+    "usageCount": 0,
+    "prompt": false,
+    "omitTrigger": false,
     "showInTrayMenu": false,
     "abbreviation": {
         "abbreviations": [],
@@ -13,11 +18,13 @@
         "wordChars": "[\\w]"
     },
     "hotkey": {
-        "modifiers": [],
-        "hotKey": null
+        "modifiers": [
+            "<super>"
+        ],
+        "hotKey": "f"
     },
     "filter": {
-        "regex": "qutebrowser.qutebrowser",
+        "regex": null,
         "isRecursive": false
     }
 }
