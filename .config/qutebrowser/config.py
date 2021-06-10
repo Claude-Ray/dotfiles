@@ -229,6 +229,13 @@ if platform.system() != "Darwin":
     config.bind('<Meta-x>', 'fake-key <Ctrl-x>', mode=m)
     config.bind('<Meta-z>', 'fake-key <Ctrl-z>', mode=m)
     config.bind('<Meta-Shift-z>', 'fake-key <Ctrl-Shift-z>', mode=m)
+  for m in ['command', 'prompt']:
+    config.bind('<Meta-a>', 'rl-end-of-line ;; fake-key -g <Shift+Home>', mode=m)
+    config.bind('<Meta-c>', 'fake-key -g <Ctrl-c>', mode=m)
+    config.bind('<Meta-x>', 'fake-key -g <Ctrl-c> ;; fake-key -g <Delete>', mode=m)
+    config.bind('<Meta-v>', 'fake-key -g <Ctrl-v>', mode=m)
+    config.bind('<Meta-z>', 'fake-key -g <Ctrl-z>', mode=m)
+    config.bind('<Meta-Shift-z>', 'fake-key -g <Ctrl-Shift-z>', mode=m)
 
 # Bindings for shortcut
 # Leader key: `,`
@@ -250,6 +257,7 @@ config.unbind('sk')
 config.unbind('sl')
 config.unbind('ss')
 config.bind('sf', 'set-cmd-text -s :open -t file:// ')
+config.bind('sg', 'set-cmd-text -s :open -t github.com ')
 config.bind('sl', 'set-cmd-text -s :open -t localhost ')
 config.bind('sq', 'set-cmd-text -s :open -t docs.qq.com ')
 config.bind('sy', 'set-cmd-text -s :open -t yuque.com ')
