@@ -12,9 +12,6 @@
 [ -x "$(which bat)" ] && alias b="bat"
 [ -x "$(which trash)" ] && alias rm="echo Use 'trash' please!"
 
-alias e="emacsclient -n"
-alias ee="emacsclient -nc"
-
 alias ni="npm install"
 alias nr="npm run"
 

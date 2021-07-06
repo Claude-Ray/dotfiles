@@ -108,6 +108,7 @@ export SAVEHIST=100000
 
 # Personal plugins
 private_plugins=(
+  emacs
   fuzzy
   p10k
   # spaceship # alternative prompt
