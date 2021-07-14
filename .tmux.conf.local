@@ -401,6 +401,7 @@ tmux_conf_update_plugins_on_reload=true
 #set -g @continuum-restore 'on'
 
 set -g @plugin 'laktak/extrakto'
+set -g @extrakto_key f
 
 # -- custom variables ----------------------------------------------------------
 # to define a custom #{foo} variable, define a POSIX shell function between the
