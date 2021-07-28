@@ -10,6 +10,10 @@ ez () {
     emacsclient -n $1
   else
     z $1
+    rc=$?
+	  if [ $rc -ne 0 ]; then
+      return $rc
+    fi
     emacsclient -n .
     cd - &> /dev/null
   fi

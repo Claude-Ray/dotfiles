@@ -35,6 +35,8 @@ export PATH="$HOME/.cargo/bin:$PATH"
 # rustup
 export RUSTUP_DIST_SERVER=https://mirrors.ustc.edu.cn/rust-static
 export RUSTUP_UPDATE_ROOT=https://mirrors.ustc.edu.cn/rust-static/rustup
+# java
+export _JAVA_AWT_WM_NONREPARENTING=1
 # gpg
 export GPG_TTY=$(tty)
 
