@@ -10,6 +10,7 @@
 [ -x "$(which nvim)" ] && alias vi="nvim" || alias vi="vim"
 [ -x "$(which lsd)" ] && alias ls="lsd"
 [ -x "$(which bat)" ] && alias b="bat"
+[ -x "$(which trans)" ] && alias t="trans -v"
 [ -x "$(which trash)" ] && alias rm="echo Use 'trash' please!"
 
 alias ni="npm install"
