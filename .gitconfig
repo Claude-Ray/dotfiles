@@ -15,4 +15,4 @@
 [github]
 	user = claude-ray
 [credential]
-	helper = cache
+	helper = store
