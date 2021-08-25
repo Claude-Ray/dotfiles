@@ -49,7 +49,7 @@ define_keymap(lambda wm_class: wm_class not in ("VirtualBox Machine"), {
     K("LSuper-LM-LC-x"): K("LSuper-LM-LC-v")
 }, "VM keys")
 
-define_keymap(re.compile("st|Alacritty"), {
+define_keymap(re.compile("st"), {
     K("LSuper-c"): K("LShift-LC-c"),
     K("LSuper-v"): K("LShift-LC-v")
 }, "Terminal")
