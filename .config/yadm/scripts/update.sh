@@ -1,6 +1,7 @@
 #!/bin/bash
 
-cd ~/.oh-my-zsh && git pull
+yadm pull
+omz update
 cd ~/.tmux && git pull
 cd ~/.emacs.d && git pull
 cd ~/.spacemacs.d && git pull
@@ -11,5 +12,6 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 elif [[ "$OSTYPE" == "linux-gnu" ]]; then
   if  [[ -f /etc/arch-release ]]; then
     sudo pacman -Syyu
+    yay
   fi
 fi
