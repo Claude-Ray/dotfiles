@@ -1,7 +1,7 @@
 #!/bin/bash
 
 yadm pull
-omz update
+cd ~/.oh-my-zsh && git pull
 cd ~/.tmux && git pull
 cd ~/.emacs.d && git pull
 cd ~/.spacemacs.d && git pull
