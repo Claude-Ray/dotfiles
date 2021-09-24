@@ -1,6 +1,9 @@
 #!/bin/bash
 
 case $1 in
+  dns)
+    cat /etc/resolv.conf.sangforbak | sudo tee -a /etc/resolv.conf
+    ;;
   down)
     echo "unloading"
     killall EasyConnect
