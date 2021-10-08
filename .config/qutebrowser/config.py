@@ -205,6 +205,7 @@ config.bind('<Meta-Ctrl-f>', 'config-cycle window.hide_decoration false true')
 config.bind('t,p', 'config-cycle content.proxy system http://localhost:7890/')
 
 # Bindings for insert mode
+config.bind('<Alt-Backspace>', 'fake-key <Ctrl-Backspace>', mode='insert')
 config.bind('<Ctrl-a>', 'fake-key <Home>', mode='insert')
 config.bind('<Ctrl-e>', 'fake-key <End>', mode='insert')
 config.bind('<Ctrl-d>', 'fake-key <Delete>', mode='insert')
