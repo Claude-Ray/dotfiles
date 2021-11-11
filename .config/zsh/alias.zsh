@@ -13,6 +13,8 @@
 [ -x "$(which trans)" ] && alias t="trans -v"
 [ -x "$(which trash)" ] && alias rm="echo Use 'trash' please!"
 
+alias ssh="TERM=xterm-256color ssh"
+
 alias ni="npm install"
 alias nr="npm run"
 
