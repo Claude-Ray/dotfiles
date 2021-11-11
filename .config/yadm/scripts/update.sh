@@ -11,7 +11,6 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   brew upgrade
 elif [[ "$OSTYPE" == "linux-gnu" ]]; then
   if  [[ -f /etc/arch-release ]]; then
-    sudo pacman -Syyu
     yay
   fi
 fi
