@@ -7,4 +7,10 @@ case $1 in
   down)
     nmcli radio wifi off
     ;;
+  connect)
+    nmcli device wifi connect
+    ;;
+  *)
+    nmcli device wifi list
+    ;;
 esac
