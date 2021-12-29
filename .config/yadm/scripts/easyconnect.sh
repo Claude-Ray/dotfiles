@@ -1,6 +1,15 @@
 #!/bin/bash
 
 case $1 in
+  init)
+    # Initial script executed after installation.
+    # Fix the directory permission to be able to save user settings.
+    CONF_PATH=/usr/share/sangfor/EasyConnect/resources/conf/
+    sudo chmod -R 777 $CONF_PATH
+    # Skip the version check to avoid "Error: version does not match the server version".
+    [[ ! -f $CONF_PATH/pkg_version.xml.old ]] && mv $CONF_PATH/pkg_version.xml $CONF_PATH/pkg_version.xml.old
+    echo -e '<?xml version="1.0" encoding="utf-8"?>\n<root></root>' > $CONF_PATH/pkg_version.xml
+    ;;
   dns)
     cat /etc/resolv.conf.sangforbak | sudo tee -a /etc/resolv.conf
     ;;
