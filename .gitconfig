@@ -4,7 +4,7 @@
 	signingkey = 0564DE1F7D4EB7FD
 [core]
 	editor = vim
-	pager = delta --theme='Monokai Extended'
+	pager = delta --syntax-theme='github'
 	excludesFile = ~/.config/git/.gitignore
 [commit]
 	gpgsign = true
