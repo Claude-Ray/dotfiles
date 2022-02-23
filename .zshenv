@@ -28,8 +28,10 @@ if [ -s "$HOME/.nvm/nvm.sh" ] && [ ! "$(whence -w __init_nvm)" = function ]; the
     }
     for i in "${__node_commands[@]}"; do alias $i='__init_nvm && '$i; done
 fi
+# make
+export MAKEFLAGS="-j$(nproc)"
 # node
-export PATH="$HOME/.nvm/versions/node/v12.21.0/bin:$PATH"
+export PATH="$HOME/.nvm/versions/node/v14.18.2/bin:$PATH"
 # cargo
 export PATH="$HOME/.cargo/bin:$PATH"
 # rustup
