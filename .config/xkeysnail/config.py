@@ -49,6 +49,14 @@ define_keymap(lambda wm_class: wm_class not in ("VirtualBox Machine"), {
     K("LSuper-LM-LC-x"): K("LSuper-LM-LC-v")
 }, "VM keys")
 
+# In a virtual machine, try the shortcut feature of the app first, otherwise rely on AutoHotkey.
+define_keymap(lambda wm_class: wm_class in ("VirtualBox Machine"), {
+    # XXX: WeChat can't recognize the super key
+    K("LSuper-LM-LC-w"): K("LM-LC-w"),
+    K("RSuper-w"): K("LM-LC-w"),
+    K("RSuper-x"): K("LSuper-LM-LC-x")
+}, "VM keys map")
+
 define_keymap(re.compile("st"), {
     K("LSuper-c"): K("LShift-LC-c"),
     K("LSuper-v"): K("LShift-LC-v")
