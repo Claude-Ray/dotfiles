@@ -110,6 +110,7 @@ export SAVEHIST=100000
 private_plugins=(
   emacs
   fuzzy
+  git
   p10k
   # spaceship # alternative prompt
   m
