@@ -13,6 +13,11 @@
 [ -x "$(which trans)" ] && alias t="trans -v"
 [ -x "$(which trash)" ] && alias rm="echo Use 'trash' please!"
 
+if [[ "$INSIDE_EMACS" = 'vterm' ]]; then
+  alias vim="ez"
+  alias vi="ez"
+fi
+
 alias ssh="TERM=xterm-256color ssh"
 
 alias ni="npm install"

@@ -4,6 +4,10 @@ alias et="emacsclient -t"
 
 # emacsclient with z command
 ez () {
+  if [[ "$INSIDE_EMACS" =~ 'vterm' ]]; then
+    emacsclient -e "(winum-select-window-1)" &> /dev/null
+  fi
+
   if [ $# -eq 0 ]; then
     emacsclient -n .
   elif [ -f $1 ] || [ -d $1 ]; then
