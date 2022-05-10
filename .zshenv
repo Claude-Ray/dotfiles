@@ -41,6 +41,8 @@ export RUSTUP_UPDATE_ROOT=https://mirrors.ustc.edu.cn/rust-static/rustup
 export _JAVA_AWT_WM_NONREPARENTING=1
 # gpg
 export GPG_TTY=$(tty)
+# opam
+[ -x "$(which opam)" ] && eval $(opam env)
 
 if [ "$(uname -s)" = "Darwin" ]; then
     # homebrew
