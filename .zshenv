@@ -43,6 +43,8 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 export GPG_TTY=$(tty)
 # opam
 [ -x "$(which opam)" ] && eval $(opam env)
+# emacs-lsp
+export LSP_USE_PLISTS=true
 
 if [ "$(uname -s)" = "Darwin" ]; then
     # homebrew
