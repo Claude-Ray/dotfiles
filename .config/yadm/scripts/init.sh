@@ -8,4 +8,5 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
   sudo ln -snf $SRC_PATH/update.sh $BIN_PATH/update
   sudo ln -snf $SRC_PATH/wifi.sh $BIN_PATH/wifi
   sudo ln -snf $SRC_PATH/idea.sh $BIN_PATH/idea
+  sudo ln -snf $SRC_PATH/remote-emacs.sh $BIN_PATH/remote-emacs
 fi
