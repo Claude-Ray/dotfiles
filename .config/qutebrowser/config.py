@@ -50,6 +50,8 @@ config.set('content.javascript.enabled', True, 'qute://*/*')
 #   - ask
 c.content.notifications.enabled = True
 
+config.set('content.notifications.enabled', False, 'app.mockplus.cn')
+
 # Display PDF files via PDF.js in the browser without showing a download
 # prompt. Note that the files can still be downloaded by clicking the
 # download button in the pdf.js viewer. With this set to `false`, the
@@ -76,7 +78,7 @@ c.content.proxy = 'http://localhost:7890/'
 #   - true
 #   - false
 #   - ask
-config.set('content.register_protocol_handler', True, 'https://mail.google.com?extsrc=mailto&url=%25s')
+config.set('content.register_protocol_handler', True, 'mail.google.com')
 
 # Comma-separated list of regular expressions to use for 'next' links.
 # Type: List of Regex
