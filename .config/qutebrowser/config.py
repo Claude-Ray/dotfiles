@@ -50,16 +50,19 @@ config.set('content.javascript.enabled', True, 'qute://*/*')
 #   - ask
 c.content.notifications.enabled = True
 
-# Allow pdf.js to view PDF files in the browser. Note that the files can
-# still be downloaded by clicking the download button in the pdf.js
-# viewer.
+# Display PDF files via PDF.js in the browser without showing a download
+# prompt. Note that the files can still be downloaded by clicking the
+# download button in the pdf.js viewer. With this set to `false`, the
+# `:prompt-open-download --pdfjs` command (bound to `<Ctrl-p>` by
+# default) can be used in the download prompt.
 # Type: Bool
 c.content.pdfjs = True
 
 # Proxy to use. In addition to the listed values, you can use a
 # `socks://...` or `http://...` URL. Note that with QtWebEngine, it will
 # take a couple of seconds until the change is applied, if this value is
-# changed at runtime.
+# changed at runtime. Authentication for SOCKS proxies isn't supported
+# due to Chromium limitations.
 # Type: Proxy
 # Valid values:
 #   - system: Use the system wide proxy.
@@ -104,7 +107,8 @@ c.hints.prev_regexes = [
 # the current web page. * `{title_sep}`: The string `" - "` if a title
 # is set, empty otherwise. * `{index}`: Index of this tab. *
 # `{aligned_index}`: Index of this tab padded with spaces to have the
-# same   width. * `{id}`: Internal tab ID of this tab. * `{scroll_pos}`:
+# same   width. * `{relative_index}`: Index of this tab relative to the
+# current tab. * `{id}`: Internal tab ID of this tab. * `{scroll_pos}`:
 # Page scroll position. * `{host}`: Host of the current web page. *
 # `{backend}`: Either `webkit` or `webengine` * `{private}`: Indicates
 # when private mode is enabled. * `{current_url}`: URL of the current
