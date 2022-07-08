@@ -16,6 +16,7 @@
 if [[ "$INSIDE_EMACS" = 'vterm' ]]; then
   alias vim="ez"
   alias vi="ez"
+  alias ls="lsd --color=never"
 fi
 
 alias ssh="TERM=xterm-256color ssh"
