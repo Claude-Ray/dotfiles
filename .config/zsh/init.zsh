@@ -77,7 +77,7 @@ plugins=(
 #-------------------------------------#
 
 # Replace p10k with theme which is compatible with vterm
-[ "$INSIDE_EMACS" =~ "vterm" ] && ZSH_THEME="robbyrussell"
+[[ "$INSIDE_EMACS" =~ "vterm" ]] && ZSH_THEME="robbyrussell"
 
 source $ZSH/oh-my-zsh.sh
 
