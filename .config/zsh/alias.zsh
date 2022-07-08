@@ -13,7 +13,7 @@
 [ -x "$(which trans)" ] && alias t="trans -v"
 [ -x "$(which trash)" ] && alias rm="echo Use 'trash' please!"
 
-if [[ "$INSIDE_EMACS" = 'vterm' ]]; then
+if [[ "$INSIDE_EMACS" =~ 'vterm' ]]; then
   alias vim="ez"
   alias vi="ez"
   alias ls="lsd --color=never"
