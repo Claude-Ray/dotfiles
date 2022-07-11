@@ -18,7 +18,7 @@ if ((SCREEN_SCALE >= 2)); then
   export CHROMIUM_USER_FLAGS="--force-device-scale-factor=2.0"
 fi
 
-(sleep 5 && xset r rate 200 60) &
+(sleep 5 && xset r rate 200 80) &
 
 xhost +SI:localuser:root &
 

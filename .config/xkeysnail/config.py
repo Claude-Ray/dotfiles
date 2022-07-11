@@ -62,4 +62,4 @@ define_keymap(re.compile("st"), {
     K("LSuper-v"): K("LShift-LC-v")
 }, "Terminal")
 
-subprocess.check_call(['xset', 'r', 'rate', '200', '60'])
+subprocess.check_call(['xset', 'r', 'rate', '200', '80'])
