@@ -114,6 +114,7 @@ private_plugins=(
   p10k
   # spaceship # alternative prompt
   m
+  nvm
   proxy
   vterm
 )
