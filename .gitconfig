@@ -16,3 +16,5 @@
 	user = claude-ray
 [credential]
 	helper = store
+[url "https://"]
+	insteadOf = git://
