@@ -62,4 +62,5 @@ define_keymap(re.compile("st"), {
     K("LSuper-v"): K("LShift-LC-v")
 }, "Terminal")
 
-subprocess.check_call(['xset', 'r', 'rate', '200', '80'])
+# FIXME: Somehow, the key-repeat has become very laggy recently.
+subprocess.check_call(['xset', 'r', 'rate', '200', '30'])
