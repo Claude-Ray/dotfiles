@@ -8,6 +8,7 @@ case $1 in
     nmcli radio wifi off
     ;;
   connect)
+    nmcli device wifi rescan
     nmcli device wifi $*
     ;;
   *)
