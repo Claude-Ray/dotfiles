@@ -18,10 +18,7 @@ if ((SCREEN_SCALE >= 2)); then
   export CHROMIUM_USER_FLAGS="--force-device-scale-factor=2.0"
 fi
 
-# FIXME: Somehow, the key-repeat has become very laggy recently.
-# It keeps inputing even if I stop typing.
-# Slow down the repeating rate to alleviate this problem.
-(sleep 5 && xset r rate 200 30) &
+(sleep 5 && xset r rate 200 80) &
 
 xhost +SI:localuser:root &
 
