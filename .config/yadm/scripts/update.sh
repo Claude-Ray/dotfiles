@@ -12,5 +12,8 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 elif [[ "$OSTYPE" == "linux-gnu" ]]; then
   if  [[ -f /etc/arch-release ]]; then
     yay
+  elif [[ -f /etc/debian_version ]]; then
+    sudo apt update
+    sudo apt upgrade
   fi
 fi
