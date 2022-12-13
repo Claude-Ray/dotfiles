@@ -426,3 +426,5 @@ set -g @extrakto_key f
 #
 # "$@"
 # # /!\ do not remove the previous line
+
+set -g allow-passthrough on
