@@ -1,0 +1,15 @@
+# cd ~ && wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf -
+# systemctl --user enable dropbox
+[Unit]
+Description=dropbox
+
+[Service]
+KillMode=process
+ExecStart=/home/claude/.dropbox-dist/dropboxd
+Environment="http_proxy=http://127.0.0.1:7890"
+Environment="https_proxy=http://127.0.0.1:7890"
+Type=simple
+Restart=always
+
+[Install]
+WantedBy=default.target
