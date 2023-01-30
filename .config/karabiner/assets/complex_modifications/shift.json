@@ -30,6 +30,7 @@
           "conditions": [
             {
               "bundle_identifiers": [
+                "org\\.alacritty",
                 "org\\.gnu\\.Emacs"
               ],
               "type": "frontmost_application_unless"
