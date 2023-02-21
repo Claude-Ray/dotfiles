@@ -36,7 +36,7 @@ redshift &
 (sleep 10 && dropbox-cli start) &
 
 # %wheel ALL=(ALL) NOPASSWD: /usr/bin/systemctl restart xkeysnail
-# (sleep 1 && sudo systemctl restart xkeysnail) &
+(sleep 1 && sudo systemctl restart xkeysnail) &
 
 xautolock -time 10 -locker slock &
 
