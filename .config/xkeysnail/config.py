@@ -13,6 +13,12 @@ define_conditional_modmap(lambda wm_class, device_name: device_name.startswith("
     Key.LEFT_META: Key.LEFT_ALT
 })
 
+define_conditional_modmap(lambda wm_class, device_name: device_name.startswith("MX Keys Mini"), {
+    Key.RIGHT_CTRL: Key.RIGHT_META,
+    Key.LEFT_ALT: Key.LEFT_META,
+    Key.LEFT_META: Key.LEFT_ALT
+})
+
 define_conditional_modmap(lambda wm_class, device_name: device_name.startswith("AT Translated Set 2 keyboard"), {
     Key.RIGHT_CTRL: Key.RIGHT_META,
     Key.LEFT_ALT: Key.LEFT_META,
