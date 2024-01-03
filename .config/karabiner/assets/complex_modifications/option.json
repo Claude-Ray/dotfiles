@@ -67,6 +67,10 @@
                 {
                   "description": "Apple Internal Keyboard",
                   "is_built_in_keyboard": true
+                },
+                {
+                  "description": "Apple Internal Keyboard / Trackpad",
+                  "is_built_in_keyboard": true
                 }
               ]
             }
