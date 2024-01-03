@@ -1,0 +1,14 @@
+import = ["/Users/bytedance/.config/alacritty/local.toml", "/Users/bytedance/.config/alacritty/theme.toml"]
+live_config_reload = true
+
+[env]
+TERM = "xterm-256color"
+
+[scrolling]
+history = 100000
+
+[selection]
+save_to_clipboard = true
+
+[window]
+decorations = "none"
