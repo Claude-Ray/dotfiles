@@ -13,6 +13,11 @@
 [ -x "$(which trans)" ] && alias t="trans -v"
 [ -x "$(which trash)" ] && alias rm="echo Use 'trash' please!"
 
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  # Replace /bin/sh (older bash actually) with newer bash
+  alias sh="bash"
+fi
+
 if [[ "$INSIDE_EMACS" =~ 'vterm' ]]; then
   alias vim="ez"
   alias vi="ez"
