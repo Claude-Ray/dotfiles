@@ -5,7 +5,7 @@ window:
 
 font:
   normal:
-    family: PragmataPro Mono Liga
+    family: PragmataPro Liga
   size: 16.0
 
 key_bindings:

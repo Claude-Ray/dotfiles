@@ -28,8 +28,6 @@ if [ -s "$HOME/.nvm/nvm.sh" ] && [ ! "$(whence -w __init_nvm)" = function ]; the
     }
     for i in "${__node_commands[@]}"; do alias $i='__init_nvm && '$i; done
 fi
-# make
-export MAKEFLAGS="-j$(nproc)"
 # node
 export PATH="$HOME/.nvm/versions/node/v14.18.2/bin:$PATH"
 # cargo
@@ -47,6 +45,7 @@ export GPG_TTY=$(tty)
 export LSP_USE_PLISTS=true
 
 if [ "$(uname -s)" = "Darwin" ]; then
+    export PATH=/opt/homebrew/bin:$PATH
     # homebrew
     # https://jfrog.com/blog/into-the-sunset-bintray-jcenter-gocenter-and-chartcenter/
     # Waiting for https://github.com/tuna/issues/issues/1224
@@ -70,6 +69,11 @@ if [ "$(uname -s)" = "Darwin" ]; then
     export RIME_PATH=$HOME/git/librime
     # pkg-config
     export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:/opt/X11/lib/pkgconfig
+    # make
+    # export MAKEFLAGS="-j$(sysctl -n hw.logicalcpu)"
+else
+    # make
+    export MAKEFLAGS="-j$(nproc)"
 fi
 
 # proxy
