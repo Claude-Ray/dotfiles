@@ -1,0 +1,5 @@
+[user]
+	name = claude
+	email = yunleiqi@gmail.com
+[commit]
+	gpgsign = true
