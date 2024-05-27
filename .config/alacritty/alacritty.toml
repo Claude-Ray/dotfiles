@@ -1,4 +1,8 @@
-import = ["/Users/bytedance/.config/alacritty/local.toml", "/Users/bytedance/.config/alacritty/theme.toml"]
+import = [
+"~/.config/alacritty/local.toml",
+"~/.config/alacritty/theme.toml",
+]
+
 live_config_reload = true
 
 [env]
