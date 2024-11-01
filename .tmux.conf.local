@@ -69,6 +69,24 @@ claude_color_green="#008000"
 claude_color_grey="#98989d"
 claude_color_goldenrod="#daa520"
 claude_color_steelblue="#4682b4"
+# custom light theme
+tmux_conf_theme_colour_1="#f0e9d7"
+tmux_conf_theme_colour_2="#9e9e9e"
+tmux_conf_theme_colour_3="#556b72"
+tmux_conf_theme_colour_4="#00afff"
+tmux_conf_theme_colour_5="#268bd2"
+tmux_conf_theme_colour_6="#f0e9d7"
+tmux_conf_theme_colour_7="#e4e4e4"    # white
+tmux_conf_theme_colour_8="#f0e9d7"
+tmux_conf_theme_colour_9="#268bd2"
+tmux_conf_theme_colour_10="#ff00af"   # pink
+tmux_conf_theme_colour_11="#5fff00"   # green
+tmux_conf_theme_colour_12="#556b72"
+tmux_conf_theme_colour_13="#e4e4e4"   # white
+tmux_conf_theme_colour_14="#f0e9d7"
+tmux_conf_theme_colour_15="#f0e9d7"
+tmux_conf_theme_colour_16="#d70000"   # red
+tmux_conf_theme_colour_17="#e4e4e4"   # white
 
 # default theme (ansi)
 #tmux_conf_theme_colour_1="colour0"
