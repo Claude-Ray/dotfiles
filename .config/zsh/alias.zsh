@@ -9,7 +9,7 @@
 
 [ -x "$(which nvim)" ] && alias vi="nvim" || alias vi="vim"
 [ -x "$(which lsd)" ] && alias ls="lsd"
-[ -x "$(which bat)" ] && alias b="bat --theme=zenburn -p"
+[ -x "$(which bat)" ] && alias b="bat -p"
 [ -x "$(which trans)" ] && alias t="trans -v"
 [ -x "$(which trash)" ] && alias rm="echo Use 'trash' please!"
 
