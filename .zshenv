@@ -29,7 +29,7 @@ if [ -s "$HOME/.nvm/nvm.sh" ] && [ ! "$(whence -w __init_nvm)" = function ]; the
     for i in "${__node_commands[@]}"; do alias $i='__init_nvm && '$i; done
 fi
 # node
-export PATH="$HOME/.nvm/versions/node/v14.18.2/bin:$PATH"
+export PATH="$HOME/.nvm/versions/node/v22.21.1/bin:$PATH"
 # cargo
 export PATH="$HOME/.cargo/bin:$PATH"
 # rustup
@@ -40,7 +40,8 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 # gpg
 export GPG_TTY=$(tty)
 # opam
-[ -x "$(which opam)" ] && eval $(opam env)
+# [ -x "$(which opam)" ] && eval $(opam env)
+[ -x "$(which opam)" ] && export PATH="$HOME/.opam/default/bin:$PATH"
 # emacs-lsp
 export LSP_USE_PLISTS=true
 
