@@ -4,7 +4,7 @@ alias et="emacsclient -t"
 
 # emacsclient with z command
 ez () {
-  if [[ "$INSIDE_EMACS" =~ 'vterm' ]]; then
+  if [[ "$INSIDE_EMACS" =~ 'vterm|ghostel' ]]; then
     emacsclient -e "(winum-select-window-1)" &> /dev/null
   fi
 

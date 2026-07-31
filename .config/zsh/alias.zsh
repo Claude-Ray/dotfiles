@@ -18,9 +18,12 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   alias sh="bash"
 fi
 
-if [[ "$INSIDE_EMACS" =~ 'vterm' ]]; then
+if [[ "$INSIDE_EMACS" =~ 'vterm|ghostel' ]]; then
   alias vim="ez"
   alias vi="ez"
+fi
+
+if [[ "$INSIDE_EMACS" =~ 'vterm' ]]; then
   alias ls="lsd --color=never"
 fi
 
