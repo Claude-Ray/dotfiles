@@ -248,6 +248,7 @@ if platform.system() != "Darwin":
 # Bindings for shortcut
 # Leader key: `,`
 config.bind(',b', 'open -t http://localhost:5000') # Beancount
+config.bind(',c', 'open -t https://chatgpt.com/')
 config.bind(',e', 'open -t https://emacs-china.org')
 config.bind(',f', 'open -t https://feedly.com')
 config.bind(',g', 'open -t https://github.com')

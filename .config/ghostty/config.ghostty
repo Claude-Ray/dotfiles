@@ -1,0 +1,12 @@
+font-family = PragmataPro Liga
+font-size = 16
+font-thicken = true
+
+theme = Solarized Light
+
+window-decoration = none
+maximize = true
+fullscreen = false
+macos-non-native-fullscreen = true
+
+macos-option-as-alt = true

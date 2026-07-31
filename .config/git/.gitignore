@@ -1,4 +1,6 @@
 .DS_store
+.agent-shell/
 .log/
+.projectile
 node_modules/
 tags
