@@ -10,3 +10,6 @@ fullscreen = false
 macos-non-native-fullscreen = true
 
 macos-option-as-alt = true
+
+keybind = ctrl+a>bracket_left=text:\x01[
+keybind = ctrl+a>bracket_right=text:\x01]
